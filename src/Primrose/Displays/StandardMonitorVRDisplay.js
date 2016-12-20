@@ -29,9 +29,18 @@ export default class StandardMonitorVRDisplay extends VRDisplay {
     this._display = display;
   }
 
-  submitFrame(pose) {
+  submitFrame() {
     if(this._display) {
-      this._display.submitFrame(pose);
+      this._display.submitFrame();
+    }
+  }
+
+  getFrameData(frameData) {
+    if(this._display && this._display.getFrameData){
+      this._display.getFrameData(frameData);
+    }
+    else{
+      super.getFrameData(frameData);
     }
   }
 

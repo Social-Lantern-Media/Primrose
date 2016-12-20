@@ -319,19 +319,6 @@ var _Math = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author philogb / http://blog.thejit.org/
- * @author jordi_ros / http://plattsoft.com
- * @author D1plo1d / http://github.com/D1plo1d
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author timknip / http://www.floorplanner.com/
- * @author bhouston / http://clara.io
- * @author WestLangley / http://github.com/WestLangley
- */
-
 function Matrix4() {
 
 	this.elements = new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]);
@@ -1222,15 +1209,6 @@ Matrix4.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author *kile / http://kile.stravaganza.org/
- * @author philogb / http://blog.thejit.org/
- * @author mikael emtinger / http://gomo.se/
- * @author egraether / http://egraether.com/
- * @author WestLangley / http://github.com/WestLangley
- */
-
 function Vector3(x, y, z) {
 
 	this.x = x || 0;
@@ -1934,13 +1912,6 @@ Vector3.prototype = {
 
 };
 
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
- */
-
 function Quaternion(x, y, z, w) {
 
 	this._x = x || 0;
@@ -2558,12 +2529,6 @@ Object.assign(EventDispatcher.prototype, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
- */
-
 function Euler(x, y, z, order) {
 
 	this._x = x || 0;
@@ -2889,13 +2854,6 @@ Layers.prototype = {
 
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
- * @author tschw
- */
-
 function Matrix3() {
 
 	this.elements = new Float32Array([1, 0, 0, 0, 1, 0, 0, 0, 1]);
@@ -3158,14 +3116,6 @@ Matrix3.prototype = {
 	}
 
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author elephantatwork / www.elephantatwork.ch
- */
 
 function Object3D() {
 
@@ -4105,11 +4055,6 @@ var RGBDEncoding = 3006;
 var BasicDepthPacking = 3200;
 var RGBADepthPacking = 3201;
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function Material() {
 
 	Object.defineProperty(this, 'id', { value: MaterialIdCount() });
@@ -4859,10 +4804,6 @@ Vector2.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function Color(r, g, b) {
 
 	if (g === undefined && b === undefined) {
@@ -5335,57 +5276,6 @@ var ColorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua': 0
 	'springgreen': 0x00FF7F, 'steelblue': 0x4682B4, 'tan': 0xD2B48C, 'teal': 0x008080, 'thistle': 0xD8BFD8, 'tomato': 0xFF6347, 'turquoise': 0x40E0D0,
 	'violet': 0xEE82EE, 'wheat': 0xF5DEB3, 'white': 0xFFFFFF, 'whitesmoke': 0xF5F5F5, 'yellow': 0xFFFF00, 'yellowgreen': 0x9ACD32 };
 
-/**
- * @author WestLangley / http://github.com/WestLangley
- *
- * parameters = {
- *  color: <hex>,
- *  roughness: <float>,
- *  metalness: <float>,
- *  opacity: <float>,
- *
- *  map: new THREE.Texture( <Image> ),
- *
- *  lightMap: new THREE.Texture( <Image> ),
- *  lightMapIntensity: <float>
- *
- *  aoMap: new THREE.Texture( <Image> ),
- *  aoMapIntensity: <float>
- *
- *  emissive: <hex>,
- *  emissiveIntensity: <float>
- *  emissiveMap: new THREE.Texture( <Image> ),
- *
- *  bumpMap: new THREE.Texture( <Image> ),
- *  bumpScale: <float>,
- *
- *  normalMap: new THREE.Texture( <Image> ),
- *  normalScale: <Vector2>,
- *
- *  displacementMap: new THREE.Texture( <Image> ),
- *  displacementScale: <float>,
- *  displacementBias: <float>,
- *
- *  roughnessMap: new THREE.Texture( <Image> ),
- *
- *  metalnessMap: new THREE.Texture( <Image> ),
- *
- *  alphaMap: new THREE.Texture( <Image> ),
- *
- *  envMap: new THREE.CubeTexture( [posx, negx, posy, negy, posz, negz] ),
- *  envMapIntensity: <float>
- *
- *  refractionRatio: <float>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>,
- *
- *  skinning: <bool>,
- *  morphTargets: <bool>,
- *  morphNormals: <bool>
- * }
- */
-
 function MeshStandardMaterial(parameters) {
 
 	Material.call(this);
@@ -5502,39 +5392,6 @@ MeshStandardMaterial.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *  map: new THREE.Texture( <Image> ),
- *
- *  aoMap: new THREE.Texture( <Image> ),
- *  aoMapIntensity: <float>
- *
- *  specularMap: new THREE.Texture( <Image> ),
- *
- *  alphaMap: new THREE.Texture( <Image> ),
- *
- *  envMap: new THREE.TextureCube( [posx, negx, posy, negy, posz, negz] ),
- *  combine: THREE.Multiply,
- *  reflectivity: <float>,
- *  refractionRatio: <float>,
- *
- *  shading: THREE.SmoothShading,
- *  depthTest: <bool>,
- *  depthWrite: <bool>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>,
- *
- *  skinning: <bool>,
- *  morphTargets: <bool>
- * }
- */
 
 function MeshBasicMaterial(parameters) {
 
@@ -5747,11 +5604,6 @@ function material(textureDescription, options) {
     return mat;
   });
 }
-
-/**
- * @author bhouston / http://clara.io
- * @author WestLangley / http://github.com/WestLangley
- */
 
 function Box3(min, max) {
 
@@ -6151,11 +6003,6 @@ Box3.prototype = {
 
 };
 
-/**
- * @author bhouston / http://clara.io
- * @author mrdoob / http://mrdoob.com/
- */
-
 function Sphere(center, radius) {
 
 	this.center = center !== undefined ? center : new Vector3();
@@ -6304,10 +6151,6 @@ Sphere.prototype = {
 	}
 
 };
-
-/**
- * @author bhouston / http://clara.io
- */
 
 function Ray(origin, direction) {
 
@@ -6779,10 +6622,6 @@ Ray.prototype = {
 
 };
 
-/**
- * @author bhouston / http://clara.io
- */
-
 function Line3(start, end) {
 
 	this.start = start !== undefined ? start : new Vector3();
@@ -6890,10 +6729,6 @@ Line3.prototype = {
 	}
 
 };
-
-/**
- * @author bhouston / http://clara.io
- */
 
 function Plane(normal, constant) {
 
@@ -7096,11 +6931,6 @@ Plane.prototype = {
 	}
 
 };
-
-/**
- * @author bhouston / http://clara.io
- * @author mrdoob / http://mrdoob.com/
- */
 
 function Triangle(a, b, c) {
 
@@ -7324,11 +7154,6 @@ Triangle.prototype = {
 	}
 
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
 
 function Face3(a, b, c, normal, color, materialIndex) {
 
@@ -7964,10 +7789,6 @@ Vector4.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function BufferAttribute(array, itemSize, normalized) {
 
 	if (Array.isArray(array)) {
@@ -8255,6 +8076,8 @@ BufferAttribute.prototype = {
 
 };
 
+//
+
 function Uint16Attribute(array, itemSize) {
 
 	return new BufferAttribute(new Uint16Array(array), itemSize);
@@ -8269,15 +8092,6 @@ function Float32Attribute(array, itemSize) {
 
 	return new BufferAttribute(new Float32Array(array), itemSize);
 }
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author kile / http://kile.stravaganza.org/
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * @author bhouston / http://clara.io
- */
 
 function Geometry() {
 
@@ -9386,10 +9200,6 @@ function GeometryIdCount() {
 	return count$2++;
 }
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function DirectGeometry() {
 
 	Object.defineProperty(this, 'id', { value: GeometryIdCount() });
@@ -9643,11 +9453,6 @@ Object.assign(DirectGeometry.prototype, EventDispatcher.prototype, {
 	}
 
 });
-
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- */
 
 function BufferGeometry() {
 
@@ -10557,13 +10362,6 @@ Object.assign(BufferGeometry.prototype, EventDispatcher.prototype, {
 
 BufferGeometry.MaxIndex = 65535;
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author jonobr1 / http://jonobr1.com/
- */
-
 function Mesh(geometry, material) {
 
 	Object3D.call(this);
@@ -10866,12 +10664,6 @@ Mesh.prototype = Object.assign(Object.create(Object3D.prototype), {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author szimek / https://github.com/szimek/
- */
 
 function Texture(image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding) {
 
@@ -11234,10 +11026,6 @@ function LoadingManager(onLoad, onProgress, onError) {
 
 var DefaultLoadingManager = new LoadingManager();
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function XHRLoader(manager) {
 
 	this.manager = manager !== undefined ? manager : DefaultLoadingManager;
@@ -11431,10 +11219,6 @@ Object.assign(XHRLoader.prototype, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function ImageLoader(manager) {
 
 	this.manager = manager !== undefined ? manager : DefaultLoadingManager;
@@ -11499,10 +11283,6 @@ Object.assign(ImageLoader.prototype, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function CubeTexture(images, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding) {
 
 	images = images !== undefined ? images : [];
@@ -11531,10 +11311,6 @@ Object.defineProperty(CubeTexture.prototype, 'images', {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function CubeTextureLoader(manager) {
 
@@ -11591,10 +11367,6 @@ Object.assign(CubeTextureLoader.prototype, {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function TextureLoader(manager) {
 
@@ -12157,10 +11929,6 @@ function colored(geometry, color, options) {
   }
   return obj;
 }
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function BoxBufferGeometry(width, height, depth, widthSegments, heightSegments, depthSegments) {
 
@@ -13224,11 +12992,6 @@ function fixGeometry(geometry, options) {
   return geometry;
 }
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
- */
-
 function PlaneBufferGeometry(width, height, widthSegments, heightSegments) {
 
 	BufferGeometry.call(this);
@@ -13890,10 +13653,6 @@ function camera(index, options) {
   return cam;
 }
 
-/**
- * @author benaadams / https://twitter.com/ben_a_adams
- */
-
 function CircleBufferGeometry(radius, segments, thetaStart, thetaLength) {
 
 	BufferGeometry.call(this);
@@ -14009,20 +13768,6 @@ function circle(r, sections, start, end) {
   });
 }
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *  map: new THREE.Texture( <Image> ),
- *
- *  size: <float>,
- *  sizeAttenuation: <bool>
- * }
- */
-
 function PointsMaterial(parameters) {
 
 	Material.call(this);
@@ -14059,10 +13804,6 @@ PointsMaterial.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author alteredq / http://alteredqualia.com/
- */
 
 function Points(geometry, material) {
 
@@ -14240,10 +13981,6 @@ function cloud(verts, c, s) {
   });
   return new Points(geom, mat);
 }
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function CylinderBufferGeometry(radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength) {
 
@@ -14626,11 +14363,6 @@ function cylinder(rT, rB, height, rS, hS, openEnded, thetaStart, thetaEnd) {
   });
 }
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function Light(color, intensity) {
 
 	Object3D.call(this);
@@ -14679,12 +14411,6 @@ Light.prototype = Object.assign(Object.create(Object3D.prototype), {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author WestLangley / http://github.com/WestLangley
-*/
 
 function Camera() {
 
@@ -14743,13 +14469,6 @@ Camera.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author greggman / http://games.greggman.com/
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * @author tschw
- */
 
 function PerspectiveCamera(fov, aspect, near, far) {
 
@@ -14949,10 +14668,6 @@ PerspectiveCamera.prototype = Object.assign(Object.create(Camera.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function LightShadow(camera) {
 
 	this.camera = camera;
@@ -15000,10 +14715,6 @@ Object.assign(LightShadow.prototype, {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function PointLight(color, intensity, distance, decay) {
 
@@ -15222,10 +14933,6 @@ function range(n, m, s, t) {
   }
 }
 
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
-
 function RingBufferGeometry(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
 
 	BufferGeometry.call(this);
@@ -15412,12 +15119,6 @@ function ring(rInner, rOuter, sectors, rings, start, end) {
   });
 }
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author bhouston / http://clara.io/
- * @author stephomi / http://stephaneginier.com/
- */
-
 function Raycaster(origin, direction, near, far) {
 
 	this.ray = new Ray(origin, direction);
@@ -15540,11 +15241,6 @@ function raycaster() {
   return new Raycaster();
 }
 
-/**
- * @author benaadams / https://twitter.com/ben_a_adams
- * based on THREE.SphereGeometry
- */
-
 function SphereBufferGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
 
 	BufferGeometry.call(this);
@@ -15638,10 +15334,6 @@ function SphereBufferGeometry(radius, widthSegments, heightSegments, phiStart, p
 
 SphereBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 SphereBufferGeometry.prototype.constructor = SphereBufferGeometry;
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
 
@@ -16766,27 +16458,6 @@ var UniformsUtils = {
 
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  defines: { "label" : "value" },
- *  uniforms: { "parameter1": { value: 1.0 }, "parameter2": { value2: 2 } },
- *
- *  fragmentShader: <string>,
- *  vertexShader: <string>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>,
- *
- *  lights: <bool>,
- *
- *  skinning: <bool>,
- *  morphTargets: <bool>,
- *  morphNormals: <bool>
- * }
- */
-
 function ShaderMaterial(parameters) {
 
 	Material.call(this);
@@ -17202,10 +16873,6 @@ var ShaderChunk = {
 	shadow_vert: shadow_vert
 };
 
-/**
- * Uniforms library for shared webgl shaders
- */
-
 var UniformsLib = {
 
 	common: {
@@ -17360,10 +17027,6 @@ var UniformsLib = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function ShadowMaterial() {
 
 	ShaderMaterial.call(this, {
@@ -17394,19 +17057,6 @@ ShadowMaterial.prototype = Object.create(ShaderMaterial.prototype);
 ShadowMaterial.prototype.constructor = ShadowMaterial;
 
 ShadowMaterial.prototype.isShadowMaterial = true;
-
-/**
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *  map: new THREE.Texture( <Image> ),
- *
- *	uvOffset: new THREE.Vector2(),
- *	uvScale: new THREE.Vector2()
- * }
- */
 
 function SpriteMaterial(parameters) {
 
@@ -17440,10 +17090,6 @@ SpriteMaterial.prototype.copy = function (source) {
 	return this;
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function RawShaderMaterial(parameters) {
 
   ShaderMaterial.call(this, parameters);
@@ -17455,10 +17101,6 @@ RawShaderMaterial.prototype = Object.create(ShaderMaterial.prototype);
 RawShaderMaterial.prototype.constructor = RawShaderMaterial;
 
 RawShaderMaterial.prototype.isRawShaderMaterial = true;
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function MultiMaterial(materials) {
 
@@ -17521,14 +17163,6 @@ MultiMaterial.prototype = {
 
 };
 
-/**
- * @author WestLangley / http://github.com/WestLangley
- *
- * parameters = {
- *  reflectivity: <float>
- * }
- */
-
 function MeshPhysicalMaterial(parameters) {
 
 	MeshStandardMaterial.call(this);
@@ -17563,56 +17197,6 @@ MeshPhysicalMaterial.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  specular: <hex>,
- *  shininess: <float>,
- *  opacity: <float>,
- *
- *  map: new THREE.Texture( <Image> ),
- *
- *  lightMap: new THREE.Texture( <Image> ),
- *  lightMapIntensity: <float>
- *
- *  aoMap: new THREE.Texture( <Image> ),
- *  aoMapIntensity: <float>
- *
- *  emissive: <hex>,
- *  emissiveIntensity: <float>
- *  emissiveMap: new THREE.Texture( <Image> ),
- *
- *  bumpMap: new THREE.Texture( <Image> ),
- *  bumpScale: <float>,
- *
- *  normalMap: new THREE.Texture( <Image> ),
- *  normalScale: <Vector2>,
- *
- *  displacementMap: new THREE.Texture( <Image> ),
- *  displacementScale: <float>,
- *  displacementBias: <float>,
- *
- *  specularMap: new THREE.Texture( <Image> ),
- *
- *  alphaMap: new THREE.Texture( <Image> ),
- *
- *  envMap: new THREE.TextureCube( [posx, negx, posy, negy, posz, negz] ),
- *  combine: THREE.Multiply,
- *  reflectivity: <float>,
- *  refractionRatio: <float>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>,
- *
- *  skinning: <bool>,
- *  morphTargets: <bool>,
- *  morphNormals: <bool>
- * }
- */
 
 function MeshPhongMaterial(parameters) {
 
@@ -17723,17 +17307,6 @@ MeshPhongMaterial.prototype.copy = function (source) {
 	return this;
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- *
- * parameters = {
- *  opacity: <float>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>
- * }
- */
-
 function MeshNormalMaterial(parameters) {
 
 	Material.call(this, parameters);
@@ -17764,44 +17337,6 @@ MeshNormalMaterial.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *
- *  map: new THREE.Texture( <Image> ),
- *
- *  lightMap: new THREE.Texture( <Image> ),
- *  lightMapIntensity: <float>
- *
- *  aoMap: new THREE.Texture( <Image> ),
- *  aoMapIntensity: <float>
- *
- *  emissive: <hex>,
- *  emissiveIntensity: <float>
- *  emissiveMap: new THREE.Texture( <Image> ),
- *
- *  specularMap: new THREE.Texture( <Image> ),
- *
- *  alphaMap: new THREE.Texture( <Image> ),
- *
- *  envMap: new THREE.TextureCube( [posx, negx, posy, negy, posz, negz] ),
- *  combine: THREE.Multiply,
- *  reflectivity: <float>,
- *  refractionRatio: <float>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>,
- *
- *  skinning: <bool>,
- *  morphTargets: <bool>,
- *  morphNormals: <bool>
- * }
- */
 
 function MeshLambertMaterial(parameters) {
 
@@ -17888,29 +17423,6 @@ MeshLambertMaterial.prototype.copy = function (source) {
 	return this;
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author bhouston / https://clara.io
- * @author WestLangley / http://github.com/WestLangley
- *
- * parameters = {
- *
- *  opacity: <float>,
- *
- *  map: new THREE.Texture( <Image> ),
- *
- *  alphaMap: new THREE.Texture( <Image> ),
- *
- *  displacementMap: new THREE.Texture( <Image> ),
- *  displacementScale: <float>,
- *  displacementBias: <float>,
- *
- *  wireframe: <boolean>,
- *  wireframeLinewidth: <float>
- * }
- */
-
 function MeshDepthMaterial(parameters) {
 
 	Material.call(this);
@@ -17967,21 +17479,6 @@ MeshDepthMaterial.prototype.copy = function (source) {
 	return this;
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *
- *  linewidth: <float>,
- *
- *  scale: <float>,
- *  dashSize: <float>,
- *  gapSize: <float>
- * }
- */
-
 function LineDashedMaterial(parameters) {
 
 	Material.call(this);
@@ -18020,20 +17517,6 @@ LineDashedMaterial.prototype.copy = function (source) {
 
 	return this;
 };
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- *
- * parameters = {
- *  color: <hex>,
- *  opacity: <float>,
- *
- *  linewidth: <float>,
- *  linecap: "round",
- *  linejoin: "round"
- * }
- */
 
 function LineBasicMaterial(parameters) {
 
@@ -18090,10 +17573,6 @@ var Materials = Object.freeze({
 	LineBasicMaterial: LineBasicMaterial,
 	Material: Material
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function MaterialLoader(manager) {
 
@@ -18233,10 +17712,6 @@ Object.assign(MaterialLoader.prototype, {
 	}
 
 });
-
-/**
- * @author alteredq / http://alteredqualia.com/
- */
 
 function Loader() {
 
@@ -19165,10 +18640,6 @@ Object3D.prototype.named = function (name) {
   return this;
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function Line(geometry, material, mode) {
 
 	if (mode === 1) {
@@ -19338,10 +18809,6 @@ Line.prototype = Object.assign(Object.create(Object3D.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function LineSegments(geometry, material) {
 
 	Line.call(this, geometry, material);
@@ -19356,10 +18823,6 @@ LineSegments.prototype = Object.assign(Object.create(Line.prototype), {
 	isLineSegments: true
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function Group() {
 
@@ -20081,7 +19544,7 @@ Euler.prototype.toString = Quaternion.prototype.toString = Vector2.prototype.toS
 };
 
 var cache$1 = {};
-Euler.prototype.debug = Quaternion.prototype.debug = Vector2.prototype.debug = Vector3.prototype.debug = Vector4.prototype.debug = function (label, digits) {
+Euler.prototype.debug = Quaternion.prototype.debug = Vector2.prototype.debug = Vector3.prototype.debug = Vector4.prototype.debug = Matrix3.prototype.debug = Matrix4.prototype.debug = function (label, digits) {
   var val = this.toString(digits);
   if (val !== cache$1[label]) {
     cache$1[label] = val;
@@ -25050,251 +24513,6 @@ var TextBox = function (_Surface) {
   return TextBox;
 }(Surface);
 
-var piOver180 = Math.PI / 180.0;
-var rad45 = Math.PI * 0.25;
-var defaultOrientation = new Float32Array([0, 0, 0, 1]);
-var defaultPosition = new Float32Array([0, 0, 0]);
-
-// Borrowed from glMatrix.
-function mat4_perspectiveFromFieldOfView(out, fov, near, far) {
-  var upTan = Math.tan(fov ? fov.upDegrees * piOver180 : rad45),
-      downTan = Math.tan(fov ? fov.downDegrees * piOver180 : rad45),
-      leftTan = Math.tan(fov ? fov.leftDegrees * piOver180 : rad45),
-      rightTan = Math.tan(fov ? fov.rightDegrees * piOver180 : rad45),
-      xScale = 2.0 / (leftTan + rightTan),
-      yScale = 2.0 / (upTan + downTan);
-
-  out[0] = xScale;
-  out[1] = 0.0;
-  out[2] = 0.0;
-  out[3] = 0.0;
-  out[4] = 0.0;
-  out[5] = yScale;
-  out[6] = 0.0;
-  out[7] = 0.0;
-  out[8] = -((leftTan - rightTan) * xScale * 0.5);
-  out[9] = (upTan - downTan) * yScale * 0.5;
-  out[10] = far / (near - far);
-  out[11] = -1.0;
-  out[12] = 0.0;
-  out[13] = 0.0;
-  out[14] = far * near / (near - far);
-  out[15] = 0.0;
-  return out;
-}
-
-function mat4_fromRotationTranslation(out, q, v) {
-  // Quaternion math
-  var x = q[0],
-      y = q[1],
-      z = q[2],
-      w = q[3],
-      x2 = x + x,
-      y2 = y + y,
-      z2 = z + z,
-      xx = x * x2,
-      xy = x * y2,
-      xz = x * z2,
-      yy = y * y2,
-      yz = y * z2,
-      zz = z * z2,
-      wx = w * x2,
-      wy = w * y2,
-      wz = w * z2;
-
-  out[0] = 1 - (yy + zz);
-  out[1] = xy + wz;
-  out[2] = xz - wy;
-  out[3] = 0;
-  out[4] = xy - wz;
-  out[5] = 1 - (xx + zz);
-  out[6] = yz + wx;
-  out[7] = 0;
-  out[8] = xz + wy;
-  out[9] = yz - wx;
-  out[10] = 1 - (xx + yy);
-  out[11] = 0;
-  out[12] = v[0];
-  out[13] = v[1];
-  out[14] = v[2];
-  out[15] = 1;
-
-  return out;
-}
-
-function mat4_translate(out, a, v) {
-  var x = v[0],
-      y = v[1],
-      z = v[2],
-      a00,
-      a01,
-      a02,
-      a03,
-      a10,
-      a11,
-      a12,
-      a13,
-      a20,
-      a21,
-      a22,
-      a23;
-
-  if (a === out) {
-    out[12] = a[0] * x + a[4] * y + a[8] * z + a[12];
-    out[13] = a[1] * x + a[5] * y + a[9] * z + a[13];
-    out[14] = a[2] * x + a[6] * y + a[10] * z + a[14];
-    out[15] = a[3] * x + a[7] * y + a[11] * z + a[15];
-  } else {
-    a00 = a[0];a01 = a[1];a02 = a[2];a03 = a[3];
-    a10 = a[4];a11 = a[5];a12 = a[6];a13 = a[7];
-    a20 = a[8];a21 = a[9];a22 = a[10];a23 = a[11];
-
-    out[0] = a00;out[1] = a01;out[2] = a02;out[3] = a03;
-    out[4] = a10;out[5] = a11;out[6] = a12;out[7] = a13;
-    out[8] = a20;out[9] = a21;out[10] = a22;out[11] = a23;
-
-    out[12] = a00 * x + a10 * y + a20 * z + a[12];
-    out[13] = a01 * x + a11 * y + a21 * z + a[13];
-    out[14] = a02 * x + a12 * y + a22 * z + a[14];
-    out[15] = a03 * x + a13 * y + a23 * z + a[15];
-  }
-
-  return out;
-}
-
-function mat4_invert(out, a) {
-  var a00 = a[0],
-      a01 = a[1],
-      a02 = a[2],
-      a03 = a[3],
-      a10 = a[4],
-      a11 = a[5],
-      a12 = a[6],
-      a13 = a[7],
-      a20 = a[8],
-      a21 = a[9],
-      a22 = a[10],
-      a23 = a[11],
-      a30 = a[12],
-      a31 = a[13],
-      a32 = a[14],
-      a33 = a[15],
-      b00 = a00 * a11 - a01 * a10,
-      b01 = a00 * a12 - a02 * a10,
-      b02 = a00 * a13 - a03 * a10,
-      b03 = a01 * a12 - a02 * a11,
-      b04 = a01 * a13 - a03 * a11,
-      b05 = a02 * a13 - a03 * a12,
-      b06 = a20 * a31 - a21 * a30,
-      b07 = a20 * a32 - a22 * a30,
-      b08 = a20 * a33 - a23 * a30,
-      b09 = a21 * a32 - a22 * a31,
-      b10 = a21 * a33 - a23 * a31,
-      b11 = a22 * a33 - a23 * a32,
-
-
-  // Calculate the determinant
-  det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
-
-  if (!det) {
-    return null;
-  }
-  det = 1.0 / det;
-
-  out[0] = (a11 * b11 - a12 * b10 + a13 * b09) * det;
-  out[1] = (a02 * b10 - a01 * b11 - a03 * b09) * det;
-  out[2] = (a31 * b05 - a32 * b04 + a33 * b03) * det;
-  out[3] = (a22 * b04 - a21 * b05 - a23 * b03) * det;
-  out[4] = (a12 * b08 - a10 * b11 - a13 * b07) * det;
-  out[5] = (a00 * b11 - a02 * b08 + a03 * b07) * det;
-  out[6] = (a32 * b02 - a30 * b05 - a33 * b01) * det;
-  out[7] = (a20 * b05 - a22 * b02 + a23 * b01) * det;
-  out[8] = (a10 * b10 - a11 * b08 + a13 * b06) * det;
-  out[9] = (a01 * b08 - a00 * b10 - a03 * b06) * det;
-  out[10] = (a30 * b04 - a31 * b02 + a33 * b00) * det;
-  out[11] = (a21 * b02 - a20 * b04 - a23 * b00) * det;
-  out[12] = (a11 * b07 - a10 * b09 - a12 * b06) * det;
-  out[13] = (a00 * b09 - a01 * b07 + a02 * b06) * det;
-  out[14] = (a31 * b01 - a30 * b03 - a32 * b00) * det;
-  out[15] = (a20 * b03 - a21 * b01 + a22 * b00) * det;
-
-  return out;
-}
-
-function updateEyeMatrices(projection, view, pose, parameters, vrDisplay) {
-  mat4_perspectiveFromFieldOfView(projection, parameters ? parameters.fieldOfView : null, vrDisplay.depthNear, vrDisplay.depthFar);
-
-  var orientation = pose.orientation || defaultOrientation;
-  var position = pose.position || defaultPosition;
-
-  mat4_fromRotationTranslation(view, orientation, position);
-  if (parameters) mat4_translate(view, view, parameters.offset);
-  mat4_invert(view, view);
-}
-
-function frameDataFromPose(frameData, pose, vrDisplay) {
-  if (!frameData || !pose) return false;
-
-  frameData.pose = pose;
-  frameData.timestamp = pose.timestamp;
-
-  updateEyeMatrices(frameData.leftProjectionMatrix, frameData.leftViewMatrix, pose, vrDisplay.getEyeParameters("left"), vrDisplay);
-  updateEyeMatrices(frameData.rightProjectionMatrix, frameData.rightViewMatrix, pose, vrDisplay.getEyeParameters("right"), vrDisplay);
-
-  return true;
-}
-
-pliny.class({
-  parent: "Primrose.Displays",
-  name: "VRFrameData",
-  description: "A polyfill for the WebVR standard VRFrameData object."
-});
-
-var VRFrameData = function VRFrameData() {
-  classCallCheck(this, VRFrameData);
-
-
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "leftProjectionMatrix",
-    type: "Float32Array",
-    description: "The projection matrix for the left eye."
-  });
-  this.leftProjectionMatrix = new Float32Array(16);
-
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "rightProjectionMatrix",
-    type: "Float32Array",
-    description: "The projection matrix for the right eye."
-  });
-  this.leftViewMatrix = new Float32Array(16);
-
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "leftViewMatrix",
-    type: "Float32Array",
-    description: "The view matrix for the left eye."
-  });
-  this.rightProjectionMatrix = new Float32Array(16);
-
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "rightViewMatrix",
-    type: "Float32Array",
-    description: "The view matrix for the right eye."
-  });
-  this.rightViewMatrix = new Float32Array(16);
-
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "pose",
-    type: "VRPose",
-    description: "Legacy VRPose data."
-  });
-  this.pose = null;
-};
-
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25310,7 +24528,6 @@ var VRFrameData = function VRFrameData() {
  * limitations under the License.
  */
 
-// Start at a higher number to reduce chance of conflict.
 var nextDisplayId = 1000;
 
 var VRDisplay = function () {
@@ -25341,19 +24558,10 @@ var VRDisplay = function () {
 
     }, "isPolyfilled", immutable(true)));
 
-    this._frameData = null;
     this._poseData = null;
   }
 
   createClass(VRDisplay, [{
-    key: "getFrameData",
-    value: function getFrameData(frameData) {
-      if (!this._frameData) {
-        this._frameData = frameDataFromPose(frameData, this.getPose(), this);
-      }
-      return this._frameData;
-    }
-  }, {
     key: "getPose",
     value: function getPose() {
       return this.getImmediatePose();
@@ -25410,7 +24618,6 @@ var VRDisplay = function () {
   }, {
     key: "submitFrame",
     value: function submitFrame(pose) {
-      this._frameData = null;
       this._poseData = null;
     }
   }]);
@@ -25453,9 +24660,18 @@ var StandardMonitorVRDisplay = function (_VRDisplay) {
 
   createClass(StandardMonitorVRDisplay, [{
     key: "submitFrame",
-    value: function submitFrame(pose) {
+    value: function submitFrame() {
       if (this._display) {
-        this._display.submitFrame(pose);
+        this._display.submitFrame();
+      }
+    }
+  }, {
+    key: "getFrameData",
+    value: function getFrameData(frameData) {
+      if (this._display && this._display.getFrameData) {
+        this._display.getFrameData(frameData);
+      } else {
+        get$1(StandardMonitorVRDisplay.prototype.__proto__ || Object.getPrototypeOf(StandardMonitorVRDisplay.prototype), "getFrameData", this).call(this, frameData);
       }
     }
   }, {
@@ -25550,11 +24766,6 @@ function makeHidingContainer(id, obj) {
   return elem;
 }
 
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function Sprite(material) {
 
 	Object3D.call(this);
@@ -25603,12 +24814,6 @@ Sprite.prototype = Object.assign(Object.create(Object3D.prototype), {
 	}
 
 });
-
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- */
 
 function LOD() {
 
@@ -25755,10 +24960,6 @@ LOD.prototype = Object.assign(Object.create(Object3D.prototype), {
 
 });
 
-/**
- * @author alteredq / http://alteredqualia.com/
- */
-
 function DataTexture(data, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, encoding) {
 
 	Texture.call(this, null, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding);
@@ -25777,13 +24978,6 @@ DataTexture.prototype = Object.create(Texture.prototype);
 DataTexture.prototype.constructor = DataTexture;
 
 DataTexture.prototype.isDataTexture = true;
-
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author michael guerrero / http://realitymeltdown.com
- * @author ikerr / http://verold.com
- */
 
 function Skeleton(bones, boneInverses, useVertexTexture) {
 
@@ -25936,12 +25130,6 @@ Object.assign(Skeleton.prototype, {
 
 });
 
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author ikerr / http://verold.com
- */
-
 function Bone(skin) {
 
 	Object3D.call(this);
@@ -25967,12 +25155,6 @@ Bone.prototype = Object.assign(Object.create(Object3D.prototype), {
 	}
 
 });
-
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author ikerr / http://verold.com
- */
 
 function SkinnedMesh(geometry, material, useVertexTexture) {
 
@@ -26125,11 +25307,6 @@ SkinnedMesh.prototype = Object.assign(Object.create(Mesh.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function Fog(color, near, far) {
 
 	this.name = '';
@@ -26157,11 +25334,6 @@ Fog.prototype.toJSON = function (meta) {
 	};
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function FogExp2(color, density) {
 
 	this.name = '';
@@ -26185,10 +25357,6 @@ FogExp2.prototype.toJSON = function (meta) {
 		density: this.density
 	};
 };
-
-/**
- * @author alteredq / http://alteredqualia.com/
- */
 
 function HemisphereLight(skyColor, groundColor, intensity) {
 
@@ -26221,10 +25389,6 @@ HemisphereLight.prototype = Object.assign(Object.create(Light.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function SpotLightShadow() {
 
 	LightShadow.call(this, new PerspectiveCamera(50, 1, 0.5, 500));
@@ -26254,10 +25418,6 @@ SpotLightShadow.prototype = Object.assign(Object.create(LightShadow.prototype), 
 	}
 
 });
-
-/**
- * @author alteredq / http://alteredqualia.com/
- */
 
 function SpotLight(color, intensity, distance, angle, penumbra, decay) {
 
@@ -26314,11 +25474,6 @@ SpotLight.prototype = Object.assign(Object.create(Light.prototype), {
 	}
 
 });
-
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author arose / http://github.com/arose
- */
 
 function OrthographicCamera(left, right, top, bottom, near, far) {
 
@@ -26430,10 +25585,6 @@ OrthographicCamera.prototype = Object.assign(Object.create(Camera.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function DirectionalLightShadow(light) {
 
   LightShadow.call(this, new OrthographicCamera(-5, 5, 5, -5, 0.5, 500));
@@ -26444,11 +25595,6 @@ DirectionalLightShadow.prototype = Object.assign(Object.create(LightShadow.proto
   constructor: DirectionalLightShadow
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
 
 function DirectionalLight(color, intensity) {
 
@@ -26483,10 +25629,6 @@ DirectionalLight.prototype = Object.assign(Object.create(Light.prototype), {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function AmbientLight(color, intensity) {
 
 	Light.call(this, color, intensity);
@@ -26503,10 +25645,6 @@ AmbientLight.prototype = Object.assign(Object.create(Light.prototype), {
 	isAmbientLight: true
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function Scene() {
 
@@ -26920,16 +26058,6 @@ Object.assign(Interpolant.prototype, {
 
 });
 
-/**
- * Fast and simple cubic spline interpolant.
- *
- * It was derived from a Hermitian construction setting the first derivative
- * at each sample position to the linear slope between neighboring positions
- * over their parameter interval.
- *
- * @author tschw
- */
-
 function CubicInterpolant(parameterPositions, sampleValues, sampleSize, resultBuffer) {
 
 	Interpolant.call(this, parameterPositions, sampleValues, sampleSize, resultBuffer);
@@ -27062,10 +26190,6 @@ CubicInterpolant.prototype = Object.assign(Object.create(Interpolant.prototype),
 
 });
 
-/**
- * @author tschw
- */
-
 function LinearInterpolant(parameterPositions, sampleValues, sampleSize, resultBuffer) {
 
 	Interpolant.call(this, parameterPositions, sampleValues, sampleSize, resultBuffer);
@@ -27094,14 +26218,6 @@ LinearInterpolant.prototype = Object.assign(Object.create(Interpolant.prototype)
 	}
 
 });
-
-/**
- *
- * Interpolant that evaluates to the sample value at the position preceeding
- * the parameter.
- *
- * @author tschw
- */
 
 function DiscreteInterpolant(parameterPositions, sampleValues, sampleSize, resultBuffer) {
 
@@ -27449,16 +26565,6 @@ function KeyframeTrackConstructor(name, times, values, interpolation) {
 	this.optimize();
 }
 
-/**
- *
- * A Track of vectored keyframe values.
- *
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
-
 function VectorKeyframeTrack(name, times, values, interpolation) {
 
   KeyframeTrackConstructor.call(this, name, times, values, interpolation);
@@ -27475,12 +26581,6 @@ VectorKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackPrototy
   // DefaultInterpolation is inherited
 
 });
-
-/**
- * Spherical linear unit quaternion interpolant.
- *
- * @author tschw
- */
 
 function QuaternionLinearInterpolant(parameterPositions, sampleValues, sampleSize, resultBuffer) {
 
@@ -27509,15 +26609,6 @@ QuaternionLinearInterpolant.prototype = Object.assign(Object.create(Interpolant.
 
 });
 
-/**
- *
- * A Track of quaternion keyframe values.
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
-
 function QuaternionKeyframeTrack(name, times, values, interpolation) {
 
 	KeyframeTrackConstructor.call(this, name, times, values, interpolation);
@@ -27542,15 +26633,6 @@ QuaternionKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackPro
 
 });
 
-/**
- *
- * A Track of numeric keyframe values.
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
-
 function NumberKeyframeTrack(name, times, values, interpolation) {
 
   KeyframeTrackConstructor.call(this, name, times, values, interpolation);
@@ -27563,16 +26645,6 @@ NumberKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackPrototy
   ValueTypeName: 'number'
 
 });
-
-/**
- *
- * A Track that interpolates Strings
- *
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
 
 function StringKeyframeTrack(name, times, values, interpolation) {
 
@@ -27593,16 +26665,6 @@ StringKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackPrototy
   InterpolantFactoryMethodSmooth: undefined
 
 });
-
-/**
- *
- * A Track of Boolean keyframe values.
- *
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
 
 function BooleanKeyframeTrack(name, times, values) {
 
@@ -27627,16 +26689,6 @@ BooleanKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackProtot
 
 });
 
-/**
- *
- * A Track of keyframe values that represent color.
- *
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
-
 function ColorKeyframeTrack(name, times, values, interpolation) {
 
   KeyframeTrackConstructor.call(this, name, times, values, interpolation);
@@ -27657,16 +26709,6 @@ ColorKeyframeTrack.prototype = Object.assign(Object.create(KeyframeTrackPrototyp
   // However, this is the place for color space parameterization.
 
 });
-
-/**
- *
- * A timed sequence of keyframes for a specific property.
- *
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- * @author tschw
- */
 
 function KeyframeTrack(name, times, values, interpolation) {
 
@@ -27790,14 +26832,6 @@ Object.assign(KeyframeTrack, {
 	}
 
 });
-
-/**
- *
- * Reusable set of Tracks that represent an animation.
- *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
- */
 
 function AnimationClip(name, duration, tracks) {
 
@@ -28093,10 +27127,6 @@ Object.assign(AnimationClip, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function BufferGeometryLoader(manager) {
 
 	this.manager = manager !== undefined ? manager : DefaultLoadingManager;
@@ -28179,11 +27209,6 @@ Object.assign(BufferGeometryLoader.prototype, {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
 
 function JSONLoader(manager) {
 
@@ -28645,10 +27670,6 @@ Object.assign(JSONLoader.prototype, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function WireframeGeometry(geometry) {
 
 	BufferGeometry.call(this);
@@ -28809,13 +27830,6 @@ function WireframeGeometry(geometry) {
 WireframeGeometry.prototype = Object.create(BufferGeometry.prototype);
 WireframeGeometry.prototype.constructor = WireframeGeometry;
 
-/**
- * @author Mugen87 / https://github.com/Mugen87
- *
- * Parametric Surfaces Geometry
- * based on the brilliant article by @prideout http://prideout.net/blog/?p=44
- */
-
 function ParametricBufferGeometry(func, slices, stacks) {
 
 	BufferGeometry.call(this);
@@ -28888,13 +27902,6 @@ function ParametricBufferGeometry(func, slices, stacks) {
 ParametricBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 ParametricBufferGeometry.prototype.constructor = ParametricBufferGeometry;
 
-/**
- * @author zz85 / https://github.com/zz85
- *
- * Parametric Surfaces Geometry
- * based on the brilliant article by @prideout http://prideout.net/blog/?p=44
- */
-
 function ParametricGeometry(func, slices, stacks) {
 
 	Geometry.call(this);
@@ -28913,10 +27920,6 @@ function ParametricGeometry(func, slices, stacks) {
 
 ParametricGeometry.prototype = Object.create(Geometry.prototype);
 ParametricGeometry.prototype.constructor = ParametricGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function PolyhedronBufferGeometry(vertices, indices, radius, detail) {
 
@@ -29183,10 +28186,6 @@ function PolyhedronBufferGeometry(vertices, indices, radius, detail) {
 PolyhedronBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 PolyhedronBufferGeometry.prototype.constructor = PolyhedronBufferGeometry;
 
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
-
 function TetrahedronBufferGeometry(radius, detail) {
 
 	var vertices = [1, 1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1];
@@ -29206,10 +28205,6 @@ function TetrahedronBufferGeometry(radius, detail) {
 TetrahedronBufferGeometry.prototype = Object.create(PolyhedronBufferGeometry.prototype);
 TetrahedronBufferGeometry.prototype.constructor = TetrahedronBufferGeometry;
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
-
 function TetrahedronGeometry(radius, detail) {
 
 	Geometry.call(this);
@@ -29227,10 +28222,6 @@ function TetrahedronGeometry(radius, detail) {
 
 TetrahedronGeometry.prototype = Object.create(Geometry.prototype);
 TetrahedronGeometry.prototype.constructor = TetrahedronGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function OctahedronBufferGeometry(radius, detail) {
 
@@ -29251,10 +28242,6 @@ function OctahedronBufferGeometry(radius, detail) {
 OctahedronBufferGeometry.prototype = Object.create(PolyhedronBufferGeometry.prototype);
 OctahedronBufferGeometry.prototype.constructor = OctahedronBufferGeometry;
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
-
 function OctahedronGeometry(radius, detail) {
 
 	Geometry.call(this);
@@ -29272,10 +28259,6 @@ function OctahedronGeometry(radius, detail) {
 
 OctahedronGeometry.prototype = Object.create(Geometry.prototype);
 OctahedronGeometry.prototype.constructor = OctahedronGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function IcosahedronBufferGeometry(radius, detail) {
 
@@ -29298,10 +28281,6 @@ function IcosahedronBufferGeometry(radius, detail) {
 IcosahedronBufferGeometry.prototype = Object.create(PolyhedronBufferGeometry.prototype);
 IcosahedronBufferGeometry.prototype.constructor = IcosahedronBufferGeometry;
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
-
 function IcosahedronGeometry(radius, detail) {
 
 	Geometry.call(this);
@@ -29319,10 +28298,6 @@ function IcosahedronGeometry(radius, detail) {
 
 IcosahedronGeometry.prototype = Object.create(Geometry.prototype);
 IcosahedronGeometry.prototype.constructor = IcosahedronGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function DodecahedronBufferGeometry(radius, detail) {
 
@@ -29358,10 +28333,6 @@ function DodecahedronBufferGeometry(radius, detail) {
 DodecahedronBufferGeometry.prototype = Object.create(PolyhedronBufferGeometry.prototype);
 DodecahedronBufferGeometry.prototype.constructor = DodecahedronBufferGeometry;
 
-/**
- * @author Abe Pazos / https://hamoid.com
- */
-
 function DodecahedronGeometry(radius, detail) {
 
 	Geometry.call(this);
@@ -29379,12 +28350,6 @@ function DodecahedronGeometry(radius, detail) {
 
 DodecahedronGeometry.prototype = Object.create(Geometry.prototype);
 DodecahedronGeometry.prototype.constructor = DodecahedronGeometry;
-
-/**
- * @author clockworkgeek / https://github.com/clockworkgeek
- * @author timothypratley / https://github.com/timothypratley
- * @author WestLangley / http://github.com/WestLangley
-*/
 
 function PolyhedronGeometry(vertices, indices, radius, detail) {
 
@@ -29405,13 +28370,6 @@ function PolyhedronGeometry(vertices, indices, radius, detail) {
 
 PolyhedronGeometry.prototype = Object.create(Geometry.prototype);
 PolyhedronGeometry.prototype.constructor = PolyhedronGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- *
- * Creates a tube which extrudes along a 3d spline.
- *
- */
 
 function TubeBufferGeometry(path, tubularSegments, radius, radialSegments, closed) {
 
@@ -29568,16 +28526,6 @@ function TubeBufferGeometry(path, tubularSegments, radius, radialSegments, close
 TubeBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 TubeBufferGeometry.prototype.constructor = TubeBufferGeometry;
 
-/**
- * @author oosmoxiecode / https://github.com/oosmoxiecode
- * @author WestLangley / https://github.com/WestLangley
- * @author zz85 / https://github.com/zz85
- * @author miningold / https://github.com/miningold
- * @author jonobr1 / https://github.com/jonobr1
- *
- * Creates a tube which extrudes along a 3d spline.
- */
-
 function TubeGeometry(path, tubularSegments, radius, radialSegments, closed, taper) {
 
 	Geometry.call(this);
@@ -29611,11 +28559,6 @@ function TubeGeometry(path, tubularSegments, radius, radialSegments, closed, tap
 TubeGeometry.prototype = Object.create(Geometry.prototype);
 TubeGeometry.prototype.constructor = TubeGeometry;
 
-/**
- * @author Mugen87 / https://github.com/Mugen87
- *
- * see: http://www.blackpawn.com/texts/pqtorus/
- */
 function TorusKnotBufferGeometry(radius, tube, tubularSegments, radialSegments, p, q) {
 
 	BufferGeometry.call(this);
@@ -29773,10 +28716,6 @@ function TorusKnotBufferGeometry(radius, tube, tubularSegments, radialSegments, 
 TorusKnotBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 TorusKnotBufferGeometry.prototype.constructor = TorusKnotBufferGeometry;
 
-/**
- * @author oosmoxiecode
- */
-
 function TorusKnotGeometry(radius, tube, tubularSegments, radialSegments, p, q, heightScale) {
 
 	Geometry.call(this);
@@ -29800,10 +28739,6 @@ function TorusKnotGeometry(radius, tube, tubularSegments, radialSegments, p, q, 
 
 TorusKnotGeometry.prototype = Object.create(Geometry.prototype);
 TorusKnotGeometry.prototype.constructor = TorusKnotGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
 
 function TorusBufferGeometry(radius, tube, radialSegments, tubularSegments, arc) {
 
@@ -29922,12 +28857,6 @@ function TorusBufferGeometry(radius, tube, radialSegments, tubularSegments, arc)
 
 TorusBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 TorusBufferGeometry.prototype.constructor = TorusBufferGeometry;
-
-/**
- * @author oosmoxiecode
- * @author mrdoob / http://mrdoob.com/
- * based on http://code.google.com/p/away3d/source/browse/trunk/fp10/Away3DLite/src/away3dlite/primitives/Torus.as?r=2888
- */
 
 function TorusGeometry(radius, tube, radialSegments, tubularSegments, arc) {
 
@@ -30638,30 +29567,6 @@ var ShapeUtils = {
 
 };
 
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- *
- * Creates extruded geometry from a path shape.
- *
- * parameters = {
- *
- *  curveSegments: <int>, // number of points on the curves
- *  steps: <int>, // number of points for z-side extrusions / used for subdividing segments of extrude spline too
- *  amount: <int>, // Depth to extrude the shape
- *
- *  bevelEnabled: <bool>, // turn on bevel
- *  bevelThickness: <float>, // how deep into the original shape bevel goes
- *  bevelSize: <float>, // how far from shape outline is bevel
- *  bevelSegments: <int>, // number of bevel layers
- *
- *  extrudePath: <THREE.CurvePath> // 3d spline path to extrude shape along. (creates Frames if .frames aren't defined)
- *  frames: <Object> // containing arrays of tangents, normals, binormals
- *
- *  uvGenerator: <Object> // object that provides UV generator functions
- *
- * }
- **/
-
 function ExtrudeGeometry(shapes, options) {
 
 	if (typeof shapes === "undefined") {
@@ -31262,25 +30167,6 @@ ExtrudeGeometry.WorldUVGenerator = {
 	}
 };
 
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * @author alteredq / http://alteredqualia.com/
- *
- * Text = 3D Text
- *
- * parameters = {
- *  font: <THREE.Font>, // font
- *
- *  size: <float>, // size of the text
- *  height: <float>, // thickness to extrude text
- *  curveSegments: <int>, // number of points on the curves
- *
- *  bevelEnabled: <bool>, // turn on bevel
- *  bevelThickness: <float>, // how deep into text bevel goes
- *  bevelSize: <float> // how far from text outline is bevel
- * }
- */
-
 function TextGeometry(text, parameters) {
 
   parameters = parameters || {};
@@ -31313,10 +30199,6 @@ function TextGeometry(text, parameters) {
 TextGeometry.prototype = Object.create(ExtrudeGeometry.prototype);
 TextGeometry.prototype.constructor = TextGeometry;
 
-/**
- * @author Kaleb Murphy
- */
-
 function RingGeometry(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
 
 	Geometry.call(this);
@@ -31338,11 +30220,6 @@ function RingGeometry(innerRadius, outerRadius, thetaSegments, phiSegments, thet
 RingGeometry.prototype = Object.create(Geometry.prototype);
 RingGeometry.prototype.constructor = RingGeometry;
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
- */
-
 function PlaneGeometry(width, height, widthSegments, heightSegments) {
 
 	Geometry.call(this);
@@ -31361,17 +30238,6 @@ function PlaneGeometry(width, height, widthSegments, heightSegments) {
 
 PlaneGeometry.prototype = Object.create(Geometry.prototype);
 PlaneGeometry.prototype.constructor = PlaneGeometry;
-
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
-
-// points - to create a closed torus, one must use a set of points
-//    like so: [ a, b, c, d, a ], see first is the same as last.
-// segments - the number of circumference segments to create
-// phiStart - the starting radian
-// phiLength - the radian (0 to 2PI) range of the lathed section
-//    2PI is a closed lathe, less than 2PI is a portion.
 
 function LatheBufferGeometry(points, segments, phiStart, phiLength) {
 
@@ -31513,19 +30379,6 @@ function LatheBufferGeometry(points, segments, phiStart, phiLength) {
 LatheBufferGeometry.prototype = Object.create(BufferGeometry.prototype);
 LatheBufferGeometry.prototype.constructor = LatheBufferGeometry;
 
-/**
- * @author astrodud / http://astrodud.isgreat.org/
- * @author zz85 / https://github.com/zz85
- * @author bhouston / http://clara.io
- */
-
-// points - to create a closed torus, one must use a set of points
-//    like so: [ a, b, c, d, a ], see first is the same as last.
-// segments - the number of circumference segments to create
-// phiStart - the starting radian
-// phiLength - the radian (0 to 2PI) range of the lathed section
-//    2PI is a closed lathe, less than 2PI is a portion.
-
 function LatheGeometry(points, segments, phiStart, phiLength) {
 
 	Geometry.call(this);
@@ -31545,22 +30398,6 @@ function LatheGeometry(points, segments, phiStart, phiLength) {
 
 LatheGeometry.prototype = Object.create(Geometry.prototype);
 LatheGeometry.prototype.constructor = LatheGeometry;
-
-/**
- * @author jonobr1 / http://jonobr1.com
- *
- * Creates a one-sided polygonal geometry from a path shape. Similar to
- * ExtrudeGeometry.
- *
- * parameters = {
- *
- *	curveSegments: <int>, // number of points on the curves. NOT USED AT THE MOMENT.
- *
- *	material: <int> // material index for front and back faces
- *	uvGenerator: <Object> // object that provides UV generator functions
- *
- * }
- **/
 
 function ShapeGeometry(shapes, options) {
 
@@ -31670,10 +30507,6 @@ ShapeGeometry.prototype.addShape = function (shape, options) {
 	}
 };
 
-/**
- * @author WestLangley / http://github.com/WestLangley
- */
-
 function EdgesGeometry(geometry, thresholdAngle) {
 
 	BufferGeometry.call(this);
@@ -31757,10 +30590,6 @@ function EdgesGeometry(geometry, thresholdAngle) {
 EdgesGeometry.prototype = Object.create(BufferGeometry.prototype);
 EdgesGeometry.prototype.constructor = EdgesGeometry;
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function CylinderGeometry(radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength) {
 
 	Geometry.call(this);
@@ -31785,10 +30614,6 @@ function CylinderGeometry(radiusTop, radiusBottom, height, radialSegments, heigh
 CylinderGeometry.prototype = Object.create(Geometry.prototype);
 CylinderGeometry.prototype.constructor = CylinderGeometry;
 
-/**
- * @author abelnation / http://github.com/abelnation
- */
-
 function ConeGeometry(radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength) {
 
 	CylinderGeometry.call(this, 0, radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength);
@@ -31808,10 +30633,6 @@ function ConeGeometry(radius, height, radialSegments, heightSegments, openEnded,
 
 ConeGeometry.prototype = Object.create(CylinderGeometry.prototype);
 ConeGeometry.prototype.constructor = ConeGeometry;
-
-/**
- * @author: abelnation / http://github.com/abelnation
- */
 
 function ConeBufferGeometry(radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength) {
 
@@ -31833,10 +30654,6 @@ function ConeBufferGeometry(radius, height, radialSegments, heightSegments, open
 ConeBufferGeometry.prototype = Object.create(CylinderBufferGeometry.prototype);
 ConeBufferGeometry.prototype.constructor = ConeBufferGeometry;
 
-/**
- * @author hughes
- */
-
 function CircleGeometry(radius, segments, thetaStart, thetaLength) {
 
 	Geometry.call(this);
@@ -31855,11 +30672,6 @@ function CircleGeometry(radius, segments, thetaStart, thetaLength) {
 
 CircleGeometry.prototype = Object.create(Geometry.prototype);
 CircleGeometry.prototype.constructor = CircleGeometry;
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Cube.as
- */
 
 function BoxGeometry(width, height, depth, widthSegments, heightSegments, depthSegments) {
 
@@ -31926,10 +30738,6 @@ var Geometries = Object.freeze({
 	BoxBufferGeometry: BoxBufferGeometry,
 	BoxGeometry: BoxGeometry
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- */
 
 function ObjectLoader(manager) {
 
@@ -32471,41 +31279,6 @@ Object.assign(ObjectLoader.prototype, {
 
 });
 
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * Extensible curve object
- *
- * Some common of Curve methods
- * .getPoint(t), getTangent(t)
- * .getPointAt(u), getTangentAt(u)
- * .getPoints(), .getSpacedPoints()
- * .getLength()
- * .updateArcLengths()
- *
- * This following classes subclasses THREE.Curve:
- *
- * -- 2d classes --
- * THREE.LineCurve
- * THREE.QuadraticBezierCurve
- * THREE.CubicBezierCurve
- * THREE.SplineCurve
- * THREE.ArcCurve
- * THREE.EllipseCurve
- *
- * -- 3d classes --
- * THREE.LineCurve3
- * THREE.QuadraticBezierCurve3
- * THREE.CubicBezierCurve3
- * THREE.SplineCurve3
- *
- * A series of curves can be represented as a THREE.CurvePath
- *
- **/
-
-/**************************************************************
- *	Abstract Curve base class
- **************************************************************/
-
 function Curve() {}
 
 Curve.prototype = {
@@ -32841,10 +31614,6 @@ Curve.create = function (constructor, getPointFunc) {
 	return constructor;
 };
 
-/**************************************************************
- *	Line
- **************************************************************/
-
 function LineCurve(v1, v2) {
 
 	this.v1 = v1;
@@ -32882,16 +31651,6 @@ LineCurve.prototype.getTangent = function (t) {
 
 	return tangent.normalize();
 };
-
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- *
- **/
-
-/**************************************************************
- *	Curved Path - a curve path is simply a array of connected
- *  curves, but retains the api of a curve
- **************************************************************/
 
 function CurvePath() {
 
@@ -33093,10 +31852,6 @@ CurvePath.prototype = Object.assign(Object.create(Curve.prototype), {
 
 });
 
-/**************************************************************
- *	Ellipse curve
- **************************************************************/
-
 function EllipseCurve(aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation) {
 
 	this.aX = aX;
@@ -33214,10 +31969,6 @@ var CurveUtils = {
 
 };
 
-/**************************************************************
- *	Spline curve
- **************************************************************/
-
 function SplineCurve(points /* array of Vector2 */) {
 
 	this.points = points === undefined ? [] : points;
@@ -33246,10 +31997,6 @@ SplineCurve.prototype.getPoint = function (t) {
 	return new Vector2(interpolate(point0.x, point1.x, point2.x, point3.x, weight), interpolate(point0.y, point1.y, point2.y, point3.y, weight));
 };
 
-/**************************************************************
- *	Cubic Bezier curve
- **************************************************************/
-
 function CubicBezierCurve(v0, v1, v2, v3) {
 
 	this.v0 = v0;
@@ -33274,10 +32021,6 @@ CubicBezierCurve.prototype.getTangent = function (t) {
 
 	return new Vector2(tangentCubicBezier(t, this.v0.x, this.v1.x, this.v2.x, this.v3.x), tangentCubicBezier(t, this.v0.y, this.v1.y, this.v2.y, this.v3.y)).normalize();
 };
-
-/**************************************************************
- *	Quadratic Bezier curve
- **************************************************************/
 
 function QuadraticBezierCurve(v0, v1, v2) {
 
@@ -33400,17 +32143,6 @@ var PathPrototype = Object.assign(Object.create(CurvePath.prototype), {
 
 });
 
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * Defines a 2d shape plane using paths.
- **/
-
-// STEP 1 Create a path.
-// STEP 2 Turn path into shape.
-// STEP 3 ExtrudeGeometry takes in Shape/Shapes
-// STEP 3a - Extract points from each shape, turn to vertices
-// STEP 3b - Triangulate each shape, add faces.
-
 function Shape() {
 
 	Path.apply(this, arguments);
@@ -33452,12 +32184,6 @@ Shape.prototype = Object.assign(Object.create(PathPrototype), {
 	}
 
 });
-
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * Creates free form 2d path using series of points, lines or curves.
- *
- **/
 
 function Path(points) {
 
@@ -33700,11 +32426,6 @@ ShapePath.prototype = {
 	}
 };
 
-/**
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * @author mrdoob / http://mrdoob.com/
- */
-
 function Font(data) {
 
 	this.data = data;
@@ -33861,10 +32582,6 @@ Object.assign(Font.prototype, {
 
 });
 
-/**
- * @author mrdoob / http://mrdoob.com/
- */
-
 function FontLoader(manager) {
 
 	this.manager = manager !== undefined ? manager : DefaultLoadingManager;
@@ -33943,8 +32660,6 @@ pliny.class({
   }]
 });
 
-// The JSON format object loader is not always included in the Three.js distribution,
-// so we have to first check for it.
 var loaders = null;
 var PATH_PATTERN = /((?:https?:\/\/)?(?:[^/]+\/)+)(\w+)(\.(?:\w+))$/;
 var EXTENSION_PATTERN = /(\.(?:\w+))+$/;
@@ -36256,6 +34971,200 @@ var Speech$1 = function (_InputProcessor) {
   return Speech;
 }(InputProcessor);
 
+var piOver180 = Math.PI / 180.0;
+var rad45 = Math.PI * 0.25;
+var defaultOrientation = new Float32Array([0, 0, 0, 1]);
+var defaultPosition = new Float32Array([0, 0, 0]);
+
+// Borrowed from glMatrix.
+function mat4_perspectiveFromFieldOfView(out, fov, near, far) {
+  var upTan = Math.tan(fov ? fov.upDegrees * piOver180 : rad45),
+      downTan = Math.tan(fov ? fov.downDegrees * piOver180 : rad45),
+      leftTan = Math.tan(fov ? fov.leftDegrees * piOver180 : rad45),
+      rightTan = Math.tan(fov ? fov.rightDegrees * piOver180 : rad45),
+      xScale = 2.0 / (leftTan + rightTan),
+      yScale = 2.0 / (upTan + downTan);
+
+  out[0] = xScale;
+  out[1] = 0.0;
+  out[2] = 0.0;
+  out[3] = 0.0;
+  out[4] = 0.0;
+  out[5] = yScale;
+  out[6] = 0.0;
+  out[7] = 0.0;
+  out[8] = -((leftTan - rightTan) * xScale * 0.5);
+  out[9] = (upTan - downTan) * yScale * 0.5;
+  out[10] = far / (near - far);
+  out[11] = -1.0;
+  out[12] = 0.0;
+  out[13] = 0.0;
+  out[14] = far * near / (near - far);
+  out[15] = 0.0;
+  return out;
+}
+
+function mat4_fromRotationTranslation(out, q, v) {
+  // Quaternion math
+  var x = q[0],
+      y = q[1],
+      z = q[2],
+      w = q[3],
+      x2 = x + x,
+      y2 = y + y,
+      z2 = z + z,
+      xx = x * x2,
+      xy = x * y2,
+      xz = x * z2,
+      yy = y * y2,
+      yz = y * z2,
+      zz = z * z2,
+      wx = w * x2,
+      wy = w * y2,
+      wz = w * z2;
+
+  out[0] = 1 - (yy + zz);
+  out[1] = xy + wz;
+  out[2] = xz - wy;
+  out[3] = 0;
+  out[4] = xy - wz;
+  out[5] = 1 - (xx + zz);
+  out[6] = yz + wx;
+  out[7] = 0;
+  out[8] = xz + wy;
+  out[9] = yz - wx;
+  out[10] = 1 - (xx + yy);
+  out[11] = 0;
+  out[12] = v[0];
+  out[13] = v[1];
+  out[14] = v[2];
+  out[15] = 1;
+
+  return out;
+}
+
+function mat4_translate(out, a, v) {
+  var x = v[0],
+      y = v[1],
+      z = v[2],
+      a00,
+      a01,
+      a02,
+      a03,
+      a10,
+      a11,
+      a12,
+      a13,
+      a20,
+      a21,
+      a22,
+      a23;
+
+  if (a === out) {
+    out[12] = a[0] * x + a[4] * y + a[8] * z + a[12];
+    out[13] = a[1] * x + a[5] * y + a[9] * z + a[13];
+    out[14] = a[2] * x + a[6] * y + a[10] * z + a[14];
+    out[15] = a[3] * x + a[7] * y + a[11] * z + a[15];
+  } else {
+    a00 = a[0];a01 = a[1];a02 = a[2];a03 = a[3];
+    a10 = a[4];a11 = a[5];a12 = a[6];a13 = a[7];
+    a20 = a[8];a21 = a[9];a22 = a[10];a23 = a[11];
+
+    out[0] = a00;out[1] = a01;out[2] = a02;out[3] = a03;
+    out[4] = a10;out[5] = a11;out[6] = a12;out[7] = a13;
+    out[8] = a20;out[9] = a21;out[10] = a22;out[11] = a23;
+
+    out[12] = a00 * x + a10 * y + a20 * z + a[12];
+    out[13] = a01 * x + a11 * y + a21 * z + a[13];
+    out[14] = a02 * x + a12 * y + a22 * z + a[14];
+    out[15] = a03 * x + a13 * y + a23 * z + a[15];
+  }
+
+  return out;
+}
+
+function mat4_invert(out, a) {
+  var a00 = a[0],
+      a01 = a[1],
+      a02 = a[2],
+      a03 = a[3],
+      a10 = a[4],
+      a11 = a[5],
+      a12 = a[6],
+      a13 = a[7],
+      a20 = a[8],
+      a21 = a[9],
+      a22 = a[10],
+      a23 = a[11],
+      a30 = a[12],
+      a31 = a[13],
+      a32 = a[14],
+      a33 = a[15],
+      b00 = a00 * a11 - a01 * a10,
+      b01 = a00 * a12 - a02 * a10,
+      b02 = a00 * a13 - a03 * a10,
+      b03 = a01 * a12 - a02 * a11,
+      b04 = a01 * a13 - a03 * a11,
+      b05 = a02 * a13 - a03 * a12,
+      b06 = a20 * a31 - a21 * a30,
+      b07 = a20 * a32 - a22 * a30,
+      b08 = a20 * a33 - a23 * a30,
+      b09 = a21 * a32 - a22 * a31,
+      b10 = a21 * a33 - a23 * a31,
+      b11 = a22 * a33 - a23 * a32,
+
+
+  // Calculate the determinant
+  det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
+
+  if (!det) {
+    return null;
+  }
+  det = 1.0 / det;
+
+  out[0] = (a11 * b11 - a12 * b10 + a13 * b09) * det;
+  out[1] = (a02 * b10 - a01 * b11 - a03 * b09) * det;
+  out[2] = (a31 * b05 - a32 * b04 + a33 * b03) * det;
+  out[3] = (a22 * b04 - a21 * b05 - a23 * b03) * det;
+  out[4] = (a12 * b08 - a10 * b11 - a13 * b07) * det;
+  out[5] = (a00 * b11 - a02 * b08 + a03 * b07) * det;
+  out[6] = (a32 * b02 - a30 * b05 - a33 * b01) * det;
+  out[7] = (a20 * b05 - a22 * b02 + a23 * b01) * det;
+  out[8] = (a10 * b10 - a11 * b08 + a13 * b06) * det;
+  out[9] = (a01 * b08 - a00 * b10 - a03 * b06) * det;
+  out[10] = (a30 * b04 - a31 * b02 + a33 * b00) * det;
+  out[11] = (a21 * b02 - a20 * b04 - a23 * b00) * det;
+  out[12] = (a11 * b07 - a10 * b09 - a12 * b06) * det;
+  out[13] = (a00 * b09 - a01 * b07 + a02 * b06) * det;
+  out[14] = (a31 * b01 - a30 * b03 - a32 * b00) * det;
+  out[15] = (a20 * b03 - a21 * b01 + a22 * b00) * det;
+
+  return out;
+}
+
+function updateEyeMatrices(projection, view, pose, parameters, vrDisplay) {
+  mat4_perspectiveFromFieldOfView(projection, parameters ? parameters.fieldOfView : null, vrDisplay.depthNear, vrDisplay.depthFar);
+
+  var orientation = pose.orientation || defaultOrientation;
+  var position = pose.position || defaultPosition;
+
+  mat4_fromRotationTranslation(view, orientation, position);
+  if (parameters) mat4_translate(view, view, parameters.offset);
+  mat4_invert(view, view);
+}
+
+function frameDataFromPose(frameData, pose, vrDisplay) {
+  if (!frameData || !pose) return false;
+
+  frameData.pose = pose;
+  frameData.timestamp = pose.timestamp;
+
+  updateEyeMatrices(frameData.leftProjectionMatrix, frameData.leftViewMatrix, pose, vrDisplay.getEyeParameters("left"), vrDisplay);
+  updateEyeMatrices(frameData.rightProjectionMatrix, frameData.rightViewMatrix, pose, vrDisplay.getEyeParameters("right"), vrDisplay);
+
+  return true;
+}
+
 pliny.class({
   parent: "Primrose.Displays.SensorFusion",
   name: "SensorSample",
@@ -36334,17 +35243,6 @@ var SensorSample = function () {
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
-/**
- * An implementation of a simple complementary filter, which fuses gyroscope and accelerometer data from the 'devicemotion' event.
- *
- * Accelerometer data is very noisy, but stable over the long term. Gyroscope data is smooth, but tends to drift over the long term.
- *
- * This fusion is relatively simple:
- * 1. Get orientation estimates from accelerometer by applying a low-pass filter on that data.
- * 2. Get orientation estimates from gyroscope by integrating over time.
- * 3. Combine the two estimates, weighing (1) in the long term, but (2) for the short term.
  */
 
 var ComplementaryFilter = function () {
@@ -36960,10 +35858,6 @@ pliny.class({
   description: "| [under construction]"
 });
 
-/*
-  A collection of all the recorded state values at a single point in time.
-*/
-
 var Frame = function () {
   createClass(Frame, null, [{
     key: "parse",
@@ -37111,28 +36005,16 @@ var Player = function (_Automator) {
   return Player;
 }(Automator);
 
-var MockVRDisplay = function () {
+var MockVRDisplay = function (_VRDisplay) {
+  inherits(MockVRDisplay, _VRDisplay);
+
   function MockVRDisplay(data) {
     classCallCheck(this, MockVRDisplay);
 
+    var _this = possibleConstructorReturn(this, (MockVRDisplay.__proto__ || Object.getPrototypeOf(MockVRDisplay)).call(this, "MockVRDisplay", true));
 
-    var timestamp = null,
-        displayName = null,
-        startOn = null;
-
-    Object.defineProperties(this, {
-      displayName: {
-        get: function get() {
-          return "Mock " + displayName;
-        },
-        set: function set(v) {
-          return displayName = v;
-        }
-      }
-    });
-
-    var dataPack = {
-      currentDisplay: this,
+    _this._dataPack = {
+      currentDisplay: _this,
       currentEyeParams: {
         left: {
           fieldOfView: {
@@ -37158,13 +36040,13 @@ var MockVRDisplay = function () {
         }
       },
       currentPose: {
-        timestamp: null,
         orientation: null,
         position: null
       }
     };
 
-    Object.defineProperties(dataPack.currentPose, {
+    var timestamp = null;
+    Object.defineProperties(_this._dataPack.currentPose, {
       timestamp: {
         get: function get() {
           return timestamp;
@@ -37183,39 +36065,94 @@ var MockVRDisplay = function () {
       }
     });
 
-    var player = new Player(dataPack);
-    player.load(data);
-    player.update(0);
+    _this._player = new Player(_this._dataPack);
+    _this._player.load(data);
+    _this._player.update(0);
 
-    this.requestAnimationFrame = function (thunk) {
-      return window.requestAnimationFrame(function (t) {
-        if (startOn === null) {
-          startOn = t;
-        }
-        player.update(t - startOn);
-        thunk(t);
-      });
-    };
-    this.getImmediatePose = function () {
-      return dataPack.currentPose;
-    };
-    this.getPose = function () {
-      return dataPack.currentPose;
-    };
-    this.getEyeParameters = function (side) {
-      return dataPack.currentEyeParams[side];
-    };
-    this.resetPose = function () {};
+    _this._startOn = null;
+    return _this;
   }
 
   createClass(MockVRDisplay, [{
-    key: "cancelAnimationFrame",
-    value: function cancelAnimationFrame(handle) {
-      window.cancelAnimationFrame(handle);
+    key: "resetPose",
+    value: function resetPose() {}
+  }, {
+    key: "_getImmediatePose",
+    value: function _getImmediatePose() {
+      return this._dataPack.currentPose;
+    }
+  }, {
+    key: "getEyeParameters",
+    value: function getEyeParameters(side) {
+      return this._dataPack.currentEyeParams[side];
+    }
+  }, {
+    key: "requestAnimationFrame",
+    value: function requestAnimationFrame(thunk) {
+      var _this2 = this;
+
+      return window.requestAnimationFrame(function (t) {
+        if (_this2._startOn === null) {
+          _this2._startOn = t;
+        }
+        _this2._player.update(t - _this2._startOn);
+        thunk(t);
+      });
     }
   }]);
   return MockVRDisplay;
-}();
+}(VRDisplay);
+
+pliny.class({
+  parent: "Primrose.Displays",
+  name: "VRFrameData",
+  description: "A polyfill for the WebVR standard VRFrameData object."
+});
+
+var VRFrameData$1 = function VRFrameData$1() {
+  classCallCheck(this, VRFrameData$1);
+
+
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "leftProjectionMatrix",
+    type: "Float32Array",
+    description: "The projection matrix for the left eye."
+  });
+  this.leftProjectionMatrix = new Float32Array(16);
+
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "rightProjectionMatrix",
+    type: "Float32Array",
+    description: "The projection matrix for the right eye."
+  });
+  this.leftViewMatrix = new Float32Array(16);
+
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "leftViewMatrix",
+    type: "Float32Array",
+    description: "The view matrix for the left eye."
+  });
+  this.rightProjectionMatrix = new Float32Array(16);
+
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "rightViewMatrix",
+    type: "Float32Array",
+    description: "The view matrix for the right eye."
+  });
+  this.rightViewMatrix = new Float32Array(16);
+
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "pose",
+    type: "VRPose",
+    description: "Legacy VRPose data."
+  });
+  this.pose = null;
+};
 
 pliny.function({
   parent: "Primrose.HTTP",
@@ -37249,28 +36186,6 @@ var isCardboardCompatible = isMobile && !isGearVR;
 var polyFillDevicesPopulated = false;
 var standardMonitorPopulated = false;
 
-function upgrade1_0_to_1_1() {
-  // Put a shim in place to update the API to 1.1 if needed.
-  if ("VRDisplay" in window && !("VRFrameData" in window)) {
-    // Provide the VRFrameData object.
-    window.VRFrameData = VRFrameData;
-
-    // A lot of Chrome builds don't have depthNear and depthFar, even
-    // though they're in the WebVR 1.0 spec. Patch them in if they're not present.
-    if (!("depthNear" in window.VRDisplay.prototype)) {
-      window.VRDisplay.prototype.depthNear = 0.01;
-    }
-
-    if (!("depthFar" in window.VRDisplay.prototype)) {
-      window.VRDisplay.prototype.depthFar = 10000.0;
-    }
-
-    window.VRDisplay.prototype.getFrameData = function (frameData) {
-      return frameDataFromPose(frameData, this.getPose(), this);
-    };
-  }
-}
-
 function getPolyfillDisplays(options) {
   if (!polyFillDevicesPopulated) {
     if (isCardboardCompatible || options.FORCE_ENABLE_VR) {
@@ -37290,27 +36205,21 @@ function getPolyfillDisplays(options) {
 }
 
 function installPolyfill(options) {
-  if (!hasNativeWebVR) {
+  if (hasNativeWebVR) {
+    console.log("don't need to install Polyfill");
+  } else {
     // Provide navigator.getVRDisplays.
     navigator.getVRDisplays = getPolyfillDisplays.bind(window, options);
 
     // Provide the VRDisplay object.
     window.VRDisplay = VRDisplay;
-
-    // Provide navigator.vrEnabled.
-    Object.defineProperty(navigator, "vrEnabled", {
-      get: function get() {
-        return isCardboardCompatible() && (FullScreen.available || isiOS); // just fake it for iOS
-      }
-    });
-
-    // Provide the VRFrameData object.
-    window.VRFrameData = VRFrameData;
   }
 }
 
 function installStandardMonitor(options) {
-  if (!standardMonitorPopulated && !isGearVR) {
+  if (standardMonitorPopulated || isGearVR) {
+    console.log("don't need to install standard monitor");
+  } else {
     var oldGetVRDisplays = navigator.getVRDisplays;
     navigator.getVRDisplays = function () {
       return oldGetVRDisplays.call(navigator).then(function (displays) {
@@ -37335,7 +36244,9 @@ function installStandardMonitor(options) {
 
 function installMockDisplay(options) {
   var data = options && options.replayData;
-  if (data) {
+  if (!data) {
+    console.log("don't need to install Mock VR Display");
+  } else {
     var oldGetVRDisplays = navigator.getVRDisplays;
     navigator.getVRDisplays = function () {
       return oldGetVRDisplays.call(navigator).then(function (displays) {
@@ -37362,6 +36273,42 @@ function installMockDisplay(options) {
           }
         }
       });
+    };
+  }
+}
+
+function upgrade1_0_to_1_1() {
+
+  // Provide navigator.vrEnabled.
+  if ("vrEnabled" in navigator) {
+    console.log("don't need to install vrEnabled.");
+  } else {
+    Object.defineProperty(navigator, "vrEnabled", {
+      get: function get() {
+        return hasNativeWebVR || isCardboardCompatible() && (FullScreen.available || isiOS); // just fake it for iOS
+      }
+    });
+  }
+
+  // Put a shim in place to update the API to 1.1 if needed.
+  if ("VRFrameData" in window) {
+    console.log("don't need to install VRFrameData");
+  } else {
+    // Provide the VRFrameData object.
+    window.VRFrameData = VRFrameData$1;
+
+    // A lot of Chrome builds don't have depthNear and depthFar, even
+    // though they're in the WebVR 1.0 spec. Patch them in if they're not present.
+    if (!("depthNear" in window.VRDisplay.prototype)) {
+      window.VRDisplay.prototype.depthNear = 0.01;
+    }
+
+    if (!("depthFar" in window.VRDisplay.prototype)) {
+      window.VRDisplay.prototype.depthFar = 10000.0;
+    }
+
+    window.VRDisplay.prototype.getFrameData = function (frameData) {
+      return frameDataFromPose(frameData, this.getPose(), this);
     };
   }
 }
@@ -37427,18 +36374,54 @@ var VR = function (_PoseInputProcessor) {
       _this.connect(0);
       return _this.displays;
     });
+
+    _this.frameData = new VRFrameData();
     return _this;
   }
 
   createClass(VR, [{
+    key: "getViews",
+    value: function getViews() {
+      if (this.currentDevice) {
+        var left = this.currentDevice.getEyeParameters("left"),
+            right = this.currentDevice.getEyeParameters("right"),
+            x = 0,
+            output = [{
+          projection: this.frameData.leftProjectionMatrix,
+          view: this.frameData.leftViewMatrix,
+          viewport: {
+            left: 0,
+            top: 0,
+            width: left.renderWidth,
+            height: left.renderHeight
+          }
+        }];
+
+        if (right) {
+          output.push({
+            projection: this.frameData.rightProjectionMatrix,
+            view: this.frameData.rightViewMatrix,
+            viewport: {
+              left: left.renderWidth,
+              top: 0,
+              width: right.renderWidth,
+              height: right.renderHeight
+            }
+          });
+        }
+
+        return output;
+      }
+    }
+  }, {
     key: "connect",
     value: function connect(selectedIndex) {
       this.currentDevice = null;
       this.currentDeviceIndex = selectedIndex;
-      this.currentPose = null;
       if (0 <= selectedIndex && selectedIndex <= this.displays.length) {
         this.currentDevice = this.displays[selectedIndex];
-        this.currentPose = this.currentDevice.getPose();
+        this.currentDevice.getFrameData(this.frameData);
+        this.currentPose = this.frameData.pose;
         this.isStereo = VR.isStereoDisplay(this.currentDevice);
       }
     }
@@ -37497,7 +36480,6 @@ var VR = function (_PoseInputProcessor) {
         promise = this.currentDevice.exitPresent();
         this.currentDevice = null;
         this.currentDeviceIndex = -1;
-        this.currentPose = null;
       } else {
         promise = Promise.resolve();
       }
@@ -37526,7 +36508,8 @@ var VR = function (_PoseInputProcessor) {
       var x, z, stage;
 
       if (this.currentDevice) {
-        this.currentPose = this.currentDevice.getPose();
+        this.currentDevice.getFrameData(this.frameData);
+        this.currentPose = this.frameData.pose;
         stage = this.currentDevice.stageParameters;
       } else {
         stage = null;
@@ -37557,20 +36540,8 @@ var VR = function (_PoseInputProcessor) {
   }, {
     key: "submitFrame",
     value: function submitFrame() {
-      if (this.currentDevice) {
-        this.currentDevice.submitFrame(this.currentPose);
-      }
-    }
-  }, {
-    key: "getTransforms",
-    value: function getTransforms(near, far) {
-      if (this.currentDevice) {
-        if (!this._transformers[this.currentDeviceIndex]) {
-          this._transformers[this.currentDeviceIndex] = new ViewCameraTransform(this.currentDevice);
-        }
-        this.currentDevice.depthNear = near;
-        this.currentDevice.depthFar = far;
-        return this._transformers[this.currentDeviceIndex].getTransforms(near, far);
+      if (this.currentDevice && this.currentDevice.isPresenting) {
+        this.currentDevice.submitFrame();
       }
     }
   }, {
@@ -37617,77 +36588,6 @@ var VR = function (_PoseInputProcessor) {
   }]);
   return VR;
 }(PoseInputProcessor);
-
-var ViewCameraTransform = function () {
-  createClass(ViewCameraTransform, null, [{
-    key: "makeTransform",
-    value: function makeTransform(eye, near, far) {
-      return {
-        translation: new Vector3().fromArray(eye.offset),
-        projection: ViewCameraTransform.fieldOfViewToProjectionMatrix(eye.fieldOfView, near, far),
-        viewport: {
-          left: 0,
-          top: 0,
-          width: eye.renderWidth,
-          height: eye.renderHeight
-        }
-      };
-    }
-  }, {
-    key: "fieldOfViewToProjectionMatrix",
-    value: function fieldOfViewToProjectionMatrix(fov, zNear, zFar) {
-      var upTan = Math.tan(fov.upDegrees * Math.PI / 180.0),
-          downTan = Math.tan(fov.downDegrees * Math.PI / 180.0),
-          leftTan = Math.tan(fov.leftDegrees * Math.PI / 180.0),
-          rightTan = Math.tan(fov.rightDegrees * Math.PI / 180.0),
-          xScale = 2.0 / (leftTan + rightTan),
-          yScale = 2.0 / (upTan + downTan),
-          matrix = new Matrix4();
-
-      matrix.elements[0] = xScale;
-      matrix.elements[1] = 0.0;
-      matrix.elements[2] = 0.0;
-      matrix.elements[3] = 0.0;
-      matrix.elements[4] = 0.0;
-      matrix.elements[5] = yScale;
-      matrix.elements[6] = 0.0;
-      matrix.elements[7] = 0.0;
-      matrix.elements[8] = -((leftTan - rightTan) * xScale * 0.5);
-      matrix.elements[9] = (upTan - downTan) * yScale * 0.5;
-      matrix.elements[10] = -(zNear + zFar) / (zFar - zNear);
-      matrix.elements[11] = -1.0;
-      matrix.elements[12] = 0.0;
-      matrix.elements[13] = 0.0;
-      matrix.elements[14] = -(2.0 * zFar * zNear) / (zFar - zNear);
-      matrix.elements[15] = 0.0;
-
-      return matrix;
-    }
-  }]);
-
-  function ViewCameraTransform(display) {
-    classCallCheck(this, ViewCameraTransform);
-
-    this.display = display;
-  }
-
-  createClass(ViewCameraTransform, [{
-    key: "getTransforms",
-    value: function getTransforms(near, far) {
-      var l = this.display.getEyeParameters("left"),
-          r = this.display.getEyeParameters("right"),
-          params = [ViewCameraTransform.makeTransform(l, near, far)];
-      if (r) {
-        params.push(ViewCameraTransform.makeTransform(r, near, far));
-      }
-      for (var i = 1; i < params.length; ++i) {
-        params[i].viewport.left = params[i - 1].viewport.left + params[i - 1].viewport.width;
-      }
-      return params;
-    }
-  }]);
-  return ViewCameraTransform;
-}();
 
 pliny.class({
   parent: "Primrose.Input",
@@ -39308,12 +38208,6 @@ WebGLUniforms.seqWithValue = function (seq, values) {
 	return r;
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- */
-
 var ShaderLib = {
 
 	basic: {
@@ -39465,10 +38359,6 @@ ShaderLib.physical = {
 	fragmentShader: ShaderChunk.meshphysical_frag
 
 };
-
-/**
- * @author bhouston / http://clara.io
- */
 
 function Box2(min, max) {
 
@@ -39667,11 +38557,6 @@ Box2.prototype = {
 	}
 
 };
-
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- */
 
 function LensFlarePlugin(renderer, flares) {
 
@@ -39954,11 +38839,6 @@ function LensFlarePlugin(renderer, flares) {
 	}
 }
 
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- */
-
 function SpritePlugin(renderer, sprites) {
 
 	var gl = renderer.context;
@@ -40214,17 +39094,6 @@ function SpritePlugin(renderer, sprites) {
 	}
 }
 
-/**
- * @author szimek / https://github.com/szimek/
- * @author alteredq / http://alteredqualia.com/
- * @author Marius Kintel / https://github.com/kintel
- */
-
-/*
- In options, we can specify:
- * Texture parameters for an auto-generated target texture
- * depthBuffer/stencilBuffer: Booleans to indicate if we should generate these buffers
-*/
 function WebGLRenderTarget(width, height, options) {
 
 	this.uuid = _Math.generateUUID();
@@ -40293,12 +39162,6 @@ Object.assign(WebGLRenderTarget.prototype, EventDispatcher.prototype, {
 	}
 
 });
-
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author bhouston / http://clara.io
- */
 
 function Frustum(p0, p1, p2, p3, p4, p5) {
 
@@ -43928,14 +42791,6 @@ function WebGLClipping() {
 	}
 }
 
-/**
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author szimek / https://github.com/szimek/
- * @author tschw
- */
-
 function WebGLRenderer(parameters) {
 
 	console.log('THREE.WebGLRenderer', REVISION);
@@ -46451,6 +45306,11 @@ pliny.record({
     default: 1024,
     description: "The size to use for the width and height of the shadow map that will be generated."
   }, {
+    name: "progress",
+    type: "Function",
+    optional: true,
+    description: "Callback function for recording model download progress."
+  }, {
     name: "gravity",
     type: "Number",
     optional: true,
@@ -46701,48 +45561,37 @@ var BrowserEnvironment = function (_AbstractEventEmitter) {
       RAF(animate);
     };
 
+    var savedCameraMatrix = new Matrix4(),
+        tempMatrix = new Matrix4();
     var render = function render() {
-      _this.camera.position.set(0, 0, 0);
-      _this.camera.quaternion.set(0, 0, 0, 1);
       _this.audio.setPlayer(_this.input.head.mesh);
       _this.renderer.clear(true, true, true);
 
-      var trans = _this.input.VR.getTransforms(_this.options.nearPlane, _this.options.nearPlane + _this.options.drawDistance);
-      for (var n = 0; trans && n < trans.length; ++n) {
+      var frameData = _this.input.VR.getViews();
+      for (var n = 0; frameData && n < frameData.length; ++n) {
         var eye = _this.options.eyeRenderOrder[n],
             i = EYE_INDICES[eye],
-            st = trans[i],
+            st = frameData[i],
             v = st.viewport;
         Entity.eyeBlankAll(i);
 
-        if (trans.length > 1) {
-          var side = 2 * i - 1;
-          if (_this.options.nonstandardIPD !== null && st.translation.x !== 0) {
-            st.translation.x = Math.sign(st.translation.x) * _this.options.nonstandardIPD;
-          }
-          if (_this.options.nonstandardNeckLength !== null) {
-            st.translation.y = _this.options.nonstandardNeckLength;
-          }
-          if (_this.options.nonstandardNeckDepth !== null) {
-            st.translation.z = _this.options.nonstandardNeckDepth;
-          }
-        }
         _this.renderer.setViewport(v.left * resolutionScale, v.top * resolutionScale, v.width * resolutionScale, v.height * resolutionScale);
-        _this.camera.projectionMatrix.copy(st.projection);
+
+        _this.camera.projectionMatrix.fromArray(st.projection);
         if (_this.input.mousePointer.unproject) {
-          _this.input.mousePointer.unproject.getInverse(st.projection);
+          _this.input.mousePointer.unproject.getInverse(_this.camera.projectionMatrix);
         }
-        _this.camera.translateOnAxis(st.translation, 1);
+        tempMatrix.fromArray(st.view);
+        _this.camera.matrixAutoUpdate = false;
+        _this.camera.matrix.getInverse(tempMatrix);
+        _this.camera.updateMatrixWorld(true);
         _this.renderer.render(_this.scene, _this.camera);
-        _this.camera.translateOnAxis(st.translation, -1);
       }
       _this.input.submitFrame();
     };
 
     var modifyScreen = function modifyScreen() {
-      var near = _this.options.nearPlane,
-          far = near + _this.options.drawDistance,
-          p = _this.input && _this.input.VR && _this.input.VR.getTransforms(near, far);
+      var p = _this.input && _this.input.VR && _this.input.VR.getViews();
 
       if (p) {
         var canvasWidth = 0,
@@ -47617,7 +46466,7 @@ var BrowserEnvironment = function (_AbstractEventEmitter) {
         window.addEventListener("keydown", focusClipboard, true);
       }
 
-      _this.input.head.add(_this.camera);
+      _this.input.stage.add(_this.camera);
 
       return _this.input.ready;
     });
@@ -47899,6 +46748,7 @@ BrowserEnvironment.DEFAULTS = {
   disableKeyboard: false,
   enableShadows: false,
   shadowMapSize: 1024,
+  progress: null,
   // The acceleration applied to falling objects.
   gravity: 9.8,
   // The amount of time in seconds to require gazes on objects before triggering the gaze event.
@@ -48358,7 +47208,7 @@ var Displays = {
   MockVRDisplay: MockVRDisplay,
   StandardMonitorVRDisplay: StandardMonitorVRDisplay,
   VRDisplay: VRDisplay,
-  VRFrameData: VRFrameData
+  VRFrameData: VRFrameData$1
 };
 
 pliny.function({

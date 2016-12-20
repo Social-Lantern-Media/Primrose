@@ -258,6 +258,7 @@ import { Quaternion } from "three/src/math/Quaternion";
 import { Color } from "three/src/math/Color";
 import { Euler } from "three/src/math/Euler";
 import { Vector3 } from "three/src/math/Vector3";
+import { Matrix4 } from "three/src/math/Matrix4";
 import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
 
 export default class BrowserEnvironment extends AbstractEventEmitter {
@@ -387,54 +388,41 @@ export default class BrowserEnvironment extends AbstractEventEmitter {
       RAF(animate);
     };
 
+    var savedCameraMatrix = new Matrix4(),
+      tempMatrix = new Matrix4();
     var render = () => {
-      this.camera.position.set(0, 0, 0);
-      this.camera.quaternion.set(0, 0, 0, 1);
       this.audio.setPlayer(this.input.head.mesh);
       this.renderer.clear(true, true, true);
 
-      var trans = this.input.VR.getTransforms(
-        this.options.nearPlane,
-        this.options.nearPlane + this.options.drawDistance);
-      for (var n = 0; trans && n < trans.length; ++n) {
+      var frameData = this.input.VR.getViews();
+      for (var n = 0; frameData && n < frameData.length; ++n) {
         var eye = this.options.eyeRenderOrder[n],
           i = EYE_INDICES[eye],
-          st = trans[i],
+          st = frameData[i],
           v = st.viewport;
         Entity.eyeBlankAll(i);
 
-        if(trans.length > 1) {
-          var side = (2 * i) - 1;
-          if(this.options.nonstandardIPD !== null && st.translation.x !== 0){
-            st.translation.x = Math.sign(st.translation.x) * this.options.nonstandardIPD;
-          }
-          if(this.options.nonstandardNeckLength !== null){
-            st.translation.y = this.options.nonstandardNeckLength;
-          }
-          if(this.options.nonstandardNeckDepth !== null){
-            st.translation.z = this.options.nonstandardNeckDepth;
-          }
-        }
         this.renderer.setViewport(
           v.left * resolutionScale,
           v.top * resolutionScale,
           v.width * resolutionScale,
           v.height * resolutionScale);
-        this.camera.projectionMatrix.copy(st.projection);
+
+        this.camera.projectionMatrix.fromArray(st.projection);
         if (this.input.mousePointer.unproject) {
-          this.input.mousePointer.unproject.getInverse(st.projection);
+          this.input.mousePointer.unproject.getInverse(this.camera.projectionMatrix);
         }
-        this.camera.translateOnAxis(st.translation, 1);
+        tempMatrix.fromArray(st.view);
+        this.camera.matrixAutoUpdate = false;
+        this.camera.matrix.getInverse(tempMatrix);
+        this.camera.updateMatrixWorld(true);
         this.renderer.render(this.scene, this.camera);
-        this.camera.translateOnAxis(st.translation, -1);
       }
       this.input.submitFrame();
     };
 
     var modifyScreen = () => {
-      var near = this.options.nearPlane,
-        far = near + this.options.drawDistance,
-        p = this.input && this.input.VR && this.input.VR.getTransforms(near, far);
+      var p = this.input && this.input.VR && this.input.VR.getViews();
 
       if (p) {
         var canvasWidth = 0,
@@ -1335,7 +1323,7 @@ export default class BrowserEnvironment extends AbstractEventEmitter {
         window.addEventListener("keydown", focusClipboard, true);
       }
 
-      this.input.head.add(this.camera);
+      this.input.stage.add(this.camera);
 
       return this.input.ready;
     });

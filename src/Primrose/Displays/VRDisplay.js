@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import frameDataFromPose from "./frameDataFromPose";
-import VRFrameData from "./VRFrameData";
 import isiOS from "../../flags/isiOS";
 import isMobile from "../../flags/isMobile";
 import immutable from "../../util/immutable";
@@ -56,15 +54,7 @@ export default class VRDisplay {
       isPolyfilled: immutable(true)
     });
 
-    this._frameData = null;
     this._poseData = null;
-  }
-
-  getFrameData(frameData) {
-    if(!this._frameData) {
-      this._frameData = frameDataFromPose(frameData, this.getPose(), this);
-    }
-    return this._frameData;
   }
 
   getPose() {
@@ -110,7 +100,6 @@ export default class VRDisplay {
   }
 
   submitFrame(pose) {
-    this._frameData = null;
     this._poseData = null;
   }
 

@@ -2999,43 +2999,7 @@ pliny.class({
   }]
 });
 
-pliny.class({
-  parent: "Primrose.Displays",
-  name: "VRFrameData",
-  description: "A polyfill for the WebVR standard VRFrameData object."
-});
-
-pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "leftProjectionMatrix",
-    type: "Float32Array",
-    description: "The projection matrix for the left eye."
-  });
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "rightProjectionMatrix",
-    type: "Float32Array",
-    description: "The projection matrix for the right eye."
-  });
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "leftViewMatrix",
-    type: "Float32Array",
-    description: "The view matrix for the left eye."
-  });
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "rightViewMatrix",
-    type: "Float32Array",
-    description: "The view matrix for the right eye."
-  });
-  pliny.property({
-    parent: "Primrose.Displays.VRFrameData",
-    name: "pose",
-    type: "VRPose",
-    description: "Legacy VRPose data."
-  });
-  pliny.function({
+pliny.function({
   parent: "Primrose.DOM",
   name: "makeHidingContainer",
   description: "Takes an element and shoves it into a containing element that\n\
@@ -3538,7 +3502,43 @@ pliny.class({
   description: "| [under construction]"
 });
 
-pliny.function({
+pliny.class({
+  parent: "Primrose.Displays",
+  name: "VRFrameData",
+  description: "A polyfill for the WebVR standard VRFrameData object."
+});
+
+pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "leftProjectionMatrix",
+    type: "Float32Array",
+    description: "The projection matrix for the left eye."
+  });
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "rightProjectionMatrix",
+    type: "Float32Array",
+    description: "The projection matrix for the right eye."
+  });
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "leftViewMatrix",
+    type: "Float32Array",
+    description: "The view matrix for the left eye."
+  });
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "rightViewMatrix",
+    type: "Float32Array",
+    description: "The view matrix for the right eye."
+  });
+  pliny.property({
+    parent: "Primrose.Displays.VRFrameData",
+    name: "pose",
+    type: "VRPose",
+    description: "Legacy VRPose data."
+  });
+  pliny.function({
   parent: "Primrose.HTTP",
   name: "getObject",
   description: "Get a JSON object from a server.",
@@ -3921,6 +3921,11 @@ pliny.record({
     optional: true,
     default: 1024,
     description: "The size to use for the width and height of the shadow map that will be generated."
+  }, {
+    name: "progress",
+    type: "Function",
+    optional: true,
+    description: "Callback function for recording model download progress."
   }, {
     name: "gravity",
     type: "Number",

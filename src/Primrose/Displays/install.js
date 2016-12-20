@@ -20,28 +20,6 @@ const hasNativeWebVR = "getVRDisplays" in navigator,
 let polyFillDevicesPopulated = false,
   standardMonitorPopulated = false;
 
-function upgrade1_0_to_1_1(){
-  // Put a shim in place to update the API to 1.1 if needed.
-  if ("VRDisplay" in window && !("VRFrameData" in window)) {
-    // Provide the VRFrameData object.
-    window.VRFrameData = VRFrameData;
-
-    // A lot of Chrome builds don't have depthNear and depthFar, even
-    // though they're in the WebVR 1.0 spec. Patch them in if they're not present.
-    if(!("depthNear" in window.VRDisplay.prototype)) {
-      window.VRDisplay.prototype.depthNear = 0.01;
-    }
-
-    if(!("depthFar" in window.VRDisplay.prototype)) {
-      window.VRDisplay.prototype.depthFar = 10000.0;
-    }
-
-    window.VRDisplay.prototype.getFrameData = function(frameData) {
-      return frameDataFromPose(frameData, this.getPose(), this);
-    };
-  }
-}
-
 function getPolyfillDisplays(options) {
   if (!polyFillDevicesPopulated) {
     if (isCardboardCompatible || options.FORCE_ENABLE_VR) {
@@ -61,28 +39,23 @@ function getPolyfillDisplays(options) {
 }
 
 function installPolyfill(options){
-  if (!hasNativeWebVR) {
+  if (hasNativeWebVR) {
+    console.log("don't need to install Polyfill");
+  }
+  else {
     // Provide navigator.getVRDisplays.
     navigator.getVRDisplays = getPolyfillDisplays.bind(window, options);
 
     // Provide the VRDisplay object.
     window.VRDisplay = VRDisplay;
-
-    // Provide navigator.vrEnabled.
-    Object.defineProperty(navigator, "vrEnabled", {
-      get: function () {
-        return isCardboardCompatible() &&
-          (FullScreen.available || isiOS); // just fake it for iOS
-      }
-    });
-
-    // Provide the VRFrameData object.
-    window.VRFrameData = VRFrameData;
   }
 }
 
 function installStandardMonitor(options) {
-  if(!standardMonitorPopulated && !isGearVR){
+  if(standardMonitorPopulated || isGearVR){
+    console.log("don't need to install standard monitor");
+  }
+  else {
     var oldGetVRDisplays = navigator.getVRDisplays;
     navigator.getVRDisplays = function () {
       return oldGetVRDisplays.call(navigator)
@@ -108,7 +81,10 @@ function installStandardMonitor(options) {
 
 function installMockDisplay(options) {
   var data = options && options.replayData;
-  if(data){
+  if(!data){
+    console.log("don't need to install Mock VR Display");
+  }
+  else {
     var oldGetVRDisplays = navigator.getVRDisplays;
     navigator.getVRDisplays = () => oldGetVRDisplays.call(navigator)
       .then((displays) => {
@@ -136,6 +112,45 @@ function installMockDisplay(options) {
           }
         }
       });
+  }
+}
+
+function upgrade1_0_to_1_1(){
+
+  // Provide navigator.vrEnabled.
+  if("vrEnabled" in navigator) {
+    console.log("don't need to install vrEnabled.");
+  }
+  else {
+    Object.defineProperty(navigator, "vrEnabled", {
+      get: function () {
+        return hasNativeWebVR || isCardboardCompatible() &&
+          (FullScreen.available || isiOS); // just fake it for iOS
+      }
+    });
+  }
+
+  // Put a shim in place to update the API to 1.1 if needed.
+  if ("VRFrameData" in window) {
+    console.log("don't need to install VRFrameData");
+  }
+  else {
+    // Provide the VRFrameData object.
+    window.VRFrameData = VRFrameData;
+
+    // A lot of Chrome builds don't have depthNear and depthFar, even
+    // though they're in the WebVR 1.0 spec. Patch them in if they're not present.
+    if(!("depthNear" in window.VRDisplay.prototype)) {
+      window.VRDisplay.prototype.depthNear = 0.01;
+    }
+
+    if(!("depthFar" in window.VRDisplay.prototype)) {
+      window.VRDisplay.prototype.depthFar = 10000.0;
+    }
+
+    window.VRDisplay.prototype.getFrameData = function(frameData) {
+      return frameDataFromPose(frameData, this.getPose(), this);
+    };
   }
 }
 

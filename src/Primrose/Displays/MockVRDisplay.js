@@ -1,20 +1,11 @@
 import Player from "../Replay/Player";
+import VRDisplay from "./VRDisplay"
 
-export default class MockVRDisplay {
+export default class MockVRDisplay extends VRDisplay {
   constructor(data) {
+    super("MockVRDisplay", true);
 
-    var timestamp = null,
-      displayName = null,
-      startOn = null;
-
-    Object.defineProperties(this, {
-      displayName: {
-        get: () => "Mock " + displayName,
-        set: (v) => displayName = v
-      }
-    });
-
-    const dataPack = {
+    this._dataPack = {
       currentDisplay: this,
       currentEyeParams: {
         left: {
@@ -41,13 +32,13 @@ export default class MockVRDisplay {
         }
       },
       currentPose: {
-        timestamp: null,
         orientation: null,
         position: null
       }
     };
 
-    Object.defineProperties(dataPack.currentPose, {
+    var timestamp = null;
+    Object.defineProperties(this._dataPack.currentPose, {
       timestamp: {
         get: () => timestamp,
         set: (v) => timestamp = v
@@ -58,25 +49,30 @@ export default class MockVRDisplay {
       }
     });
 
-    const player = new Player(dataPack);
-    player.load(data);
-    player.update(0);
+    this._player = new Player(this._dataPack);
+    this._player.load(data);
+    this._player.update(0);
 
-    this.requestAnimationFrame = (thunk) => window.requestAnimationFrame((t) => {
-      if (startOn === null) {
-        startOn = t;
-      }
-      player.update(t - startOn);
-      thunk(t);
-    });
-    this.getImmediatePose = () => dataPack.currentPose;
-    this.getPose = () => dataPack.currentPose;
-    this.getEyeParameters = (side) => dataPack.currentEyeParams[side];
-    this.resetPose = () => {};
+    this._startOn = null;
   }
 
+  resetPose() {}
 
-  cancelAnimationFrame(handle) {
-    window.cancelAnimationFrame(handle);
+  _getImmediatePose() {
+    return this._dataPack.currentPose;
+  }
+
+  getEyeParameters(side) {
+    return this._dataPack.currentEyeParams[side];
+  }
+
+  requestAnimationFrame(thunk) {
+    return window.requestAnimationFrame((t) => {
+      if (this._startOn === null) {
+        this._startOn = t;
+      }
+      this._player.update(t - this._startOn);
+      thunk(t);
+    });
   }
 };
